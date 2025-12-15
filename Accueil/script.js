@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "mercato": {
             title: "Mercato Viz",
             category: "Data Visualisation / Web",
-            images: ["/Images/Mercatoviz.png", "/Images/Mercatoviz2.png", "/Images/Mercatoviz3.png", "/Images/Mercatoviz4.png", "/Images/Mercatoviz5.png"], 
+            images: ["Images/Mercatoviz.png", "Images/Mercatoviz2.png", "Images/Mercatoviz3.png", "Images/Mercatoviz4.png", "Images/Mercatoviz5.png"], 
             stack: "HTML, CSS, JavaScript (D3.js), GitHub, VScode",
             description: `Ce projet a été réalisé dans le cadre d'un projet universitaire (module DataViz). L'objectif était de concevoir un site web interactif capable de raconter l'évolution d'un phénomène à travers la donnée.
 
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "inventory": {
             title: "Web Inventory",
             category: "Développement Back-end / SQL",
-            images: ["/Images/Webinventory2.png", "/Images/Webinventory3.png", "/Images/Webinventory4.png", "/Images/Webinventory5.png"],
+            images: ["Images/Webinventory2.png", "Images/Webinventory3.png", "Images/Webinventory4.png", "Images/Webinventory5.png"],
             stack: "PHP, MySQL,HTML/CSS, JavaScript, VScode",
             description: `Ce projet m'a permis de créer un site web d'inventaire complet. J'ai sélectionné un sujet qui m'intéressait, à savoir la composition de l'équipe du Paris Saint-Germain. Pour réussir, nous devions impérativement intégrer une base de données et utiliser des technologies spécifiques. J'ai ainsi pu développer des fonctionnalités essentielles comme le tri dynamique et le filtrage des joueurs.`,
             link: "https://webinventory.legedza.projetsmmichamps.fr"
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "teloche": {
             title: "La Téloche",
             category: "Audiovisuel / Montage Vidéo",
-            images: ["/Images/lateloche.png"],
+            images: ["Images/lateloche.png"],
             stack: "Premiere Pro, After Effects, Caméra 4K",
             description: `Description`,
             link: "https://youtube.com/..."
@@ -289,5 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
 
 }); // Fin du DOMContentLoaded
