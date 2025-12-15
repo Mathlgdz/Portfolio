@@ -1,0 +1,279 @@
+@font-face { 
+  font-family: "Code";
+  src: url("Polices/code/CODE\ Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Azonix";
+  src: url("Polices/azonix/Azonix.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CodeBold";
+  src: url("Polices/code/CODE\ Bold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+    --text-white: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-white);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: radial-gradient(circle at center, #005F67 0%, #05414B 50%, #0A222E 100%);
+    background-size: 120% 120%; 
+    animation: gradientPulse 8s ease-in-out infinite alternate; 
+    
+    overflow: hidden; 
+    position: relative; 
+}
+
+
+.wave-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.wave {
+    position: absolute;
+    left: 50%;
+    top: 45%; 
+    width: 200vw;
+    height: 200vw;
+    margin-left: -100vw;
+    border-radius: 43%; 
+    background-color: rgba(255, 255, 255, 0.05);
+    animation: drift 80s infinite linear; 
+    transform-origin: 50% 48%;
+}
+
+.wave1 {
+    animation-duration: 30s; 
+    opacity: 0.09;
+    z-index: 1;
+}
+
+.wave2 {
+    animation-duration: 35s;
+    opacity: 0.08;
+    top: 48%;
+    background-color: rgba(0, 95, 103, 0.3);
+    border-radius: 40%;
+    z-index: 2;
+}
+
+.wave3 {
+    animation-duration: 40s; 
+    opacity: 0.03;
+    top: 50%;
+    border-radius: 45%;
+    z-index: 3;
+}
+
+@keyframes drift {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-family: 'Azonix', sans-serif;
+    font-size: 7.5em;
+    letter-spacing: 5px;
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+    overflow: hidden; 
+    display: inline-block;
+    border-right: 2px solid white;
+    animation: curseur 1s ease infinite;
+}
+
+.main-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.border-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;        
+    margin-top: -5vh; 
+}
+
+.name {
+    margin-left: 4px;
+    font-size: 1.5vw;
+    letter-spacing: 0.5vw;
+    font-family: "CodeBold";
+    font-weight: bold;
+}
+
+.name .light {
+    font-family: "Code";
+    font-weight: normal;
+}
+
+.button {
+    font-family: 'K2D';
+    text-decoration: none;
+    font-size: 1em;
+    padding: 15px 40px;
+    letter-spacing: 0.2em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    align-self: center;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    background-image: 
+        linear-gradient(to right, white, white),             
+        linear-gradient(to left, white, white),              
+        linear-gradient(to right, rgb(160, 160, 160), rgb(160, 160, 160)), 
+        linear-gradient(to left, rgb(160, 160, 160), rgb(160, 160, 160));  
+    background-position: 
+        0 0,          
+        100% 100%,   
+        0 0,          
+        0 100%;      
+    background-size: 
+        0% 1px,      
+        0% 1px, 
+        100% 1px, 
+        100% 1px;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    transition: 
+        color 0.4s ease-in-out,
+        background-size 0.3s ease-in-out 0.4s; 
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    height: 0%; 
+    background-color: white;
+    z-index: -1; 
+    transition: height 0.4s ease-in-out 0s; 
+}
+
+.button:hover {
+    color: #005F67;
+    background-size: 
+        100% 1px, 
+        100% 1px, 
+        100% 1px, 
+        100% 1px;
+    transition: 
+        color 0.4s ease-in-out,
+        background-size 0.3s ease-in-out 0s;
+}
+
+.button:hover::before {
+    height: 100%;
+    transition: height 0.2s ease-in-out 0.2s;
+}
+
+@keyframes curseur {
+    0% { border-color: white; }
+    50% { border-color: transparent; }
+    100% { border-color: white; }
+}
+
+/* =========================================
+   NOUVEAU : CSS POUR LA TRANSITION (RIMAC STYLE)
+   ========================================= */
+
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #005F67 0%, #05414B 50%, #0A222E 100%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.transition-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.loader-bars {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.bar {
+    width: 50px;
+    height: 4px;
+    background-color: white;
+    opacity: 0.3;
+}
+
+.loader-bars.animate .bar {
+    animation: pulseBar 1s infinite ease-in-out;
+}
+.loader-bars.animate .bar:nth-child(1) { animation-delay: 0s; }
+.loader-bars.animate .bar:nth-child(2) { animation-delay: 0.2s; }
+.loader-bars.animate .bar:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulseBar {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+@keyframes gradientPulse {
+    0% {
+        background-size: 100% 100%;
+    }
+    100% {
+        background-size: 400% 400%;
+    }
+}
