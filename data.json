@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Mercato Viz",
+    "category": "Data Viz",
+    "tagColor": "teal",
+    "description": "Analyse interactive du marché des transferts de football, création universitaire.",
+    "layout": "wide",
+    "mediaType": "image",
+    "mediaSrc": "MercatoViz.png"
+  },
+  {
+    "id": 2,
+    "title": "La téloche",
+    "category": "Court-métrage",
+    "tagColor": "green",
+    "description": "Réalisation d'un court-métrage avec incrustation fond vert, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "lateloche.png"
+  },
+  {
+    "id": 3,
+    "title": "Affiches Foot",
+    "category": "Design",
+    "tagColor": "teal",
+    "description": "Création d'affiches de joueurs de foot, création personnelle.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "4.png"
+  },
+  {
+    "id": 4,
+    "title": "Web Inventory",
+    "category": "Web",
+    "tagColor": "teal",
+    "description": "Création d'un site web d'inventaire sur le sujet de son choix, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "webinventory.png"
+  },
+  {
+    "id": 5,
+    "title": "Campagne institutionnelle",
+    "category": "Maquettage",
+    "tagColor": "teal",
+    "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
+    "layout": "wide",
+    "mediaType": "image",
+    "mediaSrc": "Campagne.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Livret Filmique",
+    "category": "Design"  ,
+    "tagColor": "teal",
+    "description": "Réalisation d'un livret sur un film donné, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "livret.png"
+  },
+  {
+    "id": 7,
+    "title": "Mini blog",
+    "category": "Web"  ,
+    "tagColor": "teal",
+    "description": "Réalisation d'un mini blog interactif, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "miniblog.png"
+  },
+  {
+    "id": 8,
+    "title": "Affiche de sensibilisation",
+    "category": "Design"  ,
+    "tagColor": "teal",
+    "description": "Réalisation d'une affiche de sensibilisation sur un sujet donné, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "sensi.png"
+  }
+]

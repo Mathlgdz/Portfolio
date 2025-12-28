@@ -1,294 +1,164 @@
-// --- GESTION DE L'OUVERTURE FLUIDE (RIDEAU) ---
-window.addEventListener('load', () => {
-    const overlay = document.querySelector('.reveal-overlay');
-    if (overlay) {
-        setTimeout(() => {
-            overlay.classList.add('hidden');
-        }, 100);
-        
-        setTimeout(() => {
-            overlay.remove();
-        }, 1000);
+const menuBtn = document.getElementById('menuBtn');
+const menuOverlay = document.getElementById('menuOverlay');
+const menuLinks = document.querySelectorAll('.menu-link');
+const body = document.body;
+const themeBtn = document.getElementById('themeBtn');
+
+// --- GESTION DU MODE SOMBRE (MANUEL) ---
+
+// 1. Vérifier si l'utilisateur a déjà choisi une préférence
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    enableDarkMode();
+}
+
+// 2. Fonction pour activer le mode sombre
+function enableDarkMode() {
+    body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
+    // Change l'icône en Soleil
+    themeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+    
+    // SUPPRESSION DU FORÇAGE DE STYLE ICI : Le CSS s'en charge via body.dark-mode .nav-btn
+}
+
+// 3. Fonction pour désactiver le mode sombre (Mode Clair)
+function disableDarkMode() {
+    body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
+    // Change l'icône en Lune
+    themeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+    
+    // SUPPRESSION DU FORÇAGE DE STYLE ICI
+}
+
+// 4. Écouteur d'événement sur le bouton thème
+themeBtn.addEventListener('click', () => {
+    if (body.classList.contains('dark-mode')) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
     }
 });
 
-// On attend que le DOM soit chargé pour le reste
-document.addEventListener('DOMContentLoaded', () => {
 
-    const navLinks = document.querySelectorAll('.side-nav li');
-    const sections = document.querySelectorAll('.content-section');
+// --- CHARGEMENT DES PROJETS VIA JSON ---
+async function loadProjects() {
+    try {
+        // Assurez-vous que le fichier data.json est bien à la racine du dossier
+        const response = await fetch('data.json');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-    // Référence aux blocs projets univ
-    const univIntroBlock = document.getElementById('univ-intro');
-    const univProjectsContainer = document.getElementById('univ-projects-container');
+        const projects = await response.json();
+        const container = document.getElementById('projects-container');
 
-    // Référence aux blocs projets perso
-    const persoIntroBlock = document.getElementById('perso-intro');
-    const persoProjectsContainer = document.getElementById('perso-projects-container');
+        // Vider le conteneur avant d'ajouter pour éviter les doublons si rappelée
+        container.innerHTML = '';
 
-    // --- NAVIGATION ---
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-            const targetId = this.getAttribute('data-target');
-            
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-
-                // --- GESTION DE LA RÉAPPARITION FLUIDE (UNIV) ---
-                if (targetId === 'section-2') {
-                    if (univIntroBlock) univIntroBlock.classList.remove('hidden');
-                    if (univProjectsContainer) univProjectsContainer.classList.remove('visible');
-                }
-
-                // --- GESTION DE LA RÉAPPARITION FLUIDE (PERSO) ---
-                if (targetId === 'section-3') {
-                    if (persoIntroBlock) persoIntroBlock.classList.remove('hidden');
-                    if (persoProjectsContainer) persoProjectsContainer.classList.remove('visible');
-                }
-
-                // Reset Animation Separateur
-                const separator = targetSection.querySelector('.separator');
-                if(separator) {
-                    separator.style.animation = 'none';
-                    void separator.offsetWidth; // Trigger reflow
-                    separator.style.animation = 'expandLine 2s ease-out forwards 1.5s'; 
-                }
-                
-                // Reset Animation Pivot
-                const pivotO = targetSection.querySelector('.pivot-o');
-                if(pivotO) {
-                    pivotO.style.animation = 'none';
-                    void pivotO.offsetWidth; 
-                    pivotO.style.animation = 'rotate3D 30s ease-in-out infinite 2.5s';
-                }
-
-                const pivotI = targetSection.querySelector('.pivot-I');
-                if(pivotI) {
-                    pivotI.style.animation = 'none';
-                    void pivotI.offsetWidth; 
-                    pivotI.style.animation = 'rotate3D2 30s ease-in-out infinite 2.5s';
-                }
-
-                // --- RESET DES ANIMATIONS D'ENTREE ---
-                const animatedElements = targetSection.querySelectorAll('.content-wrapper > *:not(.separator)');
-                
-                animatedElements.forEach(el => {
-                    el.style.animation = 'none';
-                    void el.offsetHeight; 
-                    el.style.animation = ''; 
-                });
+        projects.forEach(project => {
+            let mediaContent = '';
+            if (project.mediaType === 'video') {
+                mediaContent = `
+                    <video autoplay muted loop playsinline class="card-media">
+                        <source src="${project.mediaSrc}" type="video/mp4">
+                        <img src="${project.poster}" alt="${project.title}" style="width:100%; height:100%; object-fit:cover;">
+                    </video>`;
+            } else {
+                mediaContent = `<img src="${project.mediaSrc}" alt="${project.title}" class="card-media">`;
             }
-        });
-    });
 
-    // --- GESTION DU CLIC SUR LA FLÈCHE ---
-    const arrow = document.querySelector('.arrow-icon');
-    if (arrow) {
-        arrow.addEventListener('click', function() {
-            const section2Link = document.querySelector('.side-nav li[data-target="section-2"]');
-            if (section2Link) {
-                section2Link.click();
-            }
+            const layoutClass = project.layout === 'wide' ? 'wide' : (project.layout === 'tall' ? 'tall' : '');
+
+            const cardHTML = `
+                <article class="card ${layoutClass}">
+                    ${mediaContent}
+                    <div class="card-content">
+                        <span class="tag ${project.tagColor}">${project.category}</span>
+                        <h3>${project.title}</h3>
+                        <p>${project.description}</p>
+                    </div>
+                </article>
+            `;
+            container.innerHTML += cardHTML;
         });
+
+        // On initialise l'observer sur les cartes nouvellement créées
+        initScrollAnimations();
+
+    } catch (error) {
+        console.error("Erreur lors du chargement des projets :", error);
+        // Optionnel : Afficher un message d'erreur à l'utilisateur dans le container
+        const container = document.getElementById('projects-container');
+        if(container) container.innerHTML = '<p>Impossible de charger les projets.</p>';
     }
+}
 
-    // --- GESTION DU TOGGLE PROJETS UNIV ---
-    const btnUnivDiscover = document.getElementById('btn-univ-discover');
-    const btnUnivBack = document.getElementById('btn-univ-back');
+// --- MENU ---
+let isMenuOpen = false;
 
-    if (btnUnivDiscover && univIntroBlock && univProjectsContainer) {
-        btnUnivDiscover.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            univIntroBlock.classList.add('hidden');
-            setTimeout(() => {
-                univProjectsContainer.classList.add('visible');
-            }, 300);
-        });
+function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+        menuOverlay.classList.add('active'); 
+        body.classList.add('menu-open');
+        menuBtn.textContent = "Fermer"; 
+        
+        // Le changement de couleur est géré par le CSS (body.menu-open header)
+        // On force juste le style blanc pour le bouton fermer si besoin de contraste spécifique
+        // Mais idéalement, laissez le CSS gérer ça aussi.
+        menuBtn.style.background = "#ffffff"; 
+        menuBtn.style.color = "var(--col-deep-blue)";
+    } else {
+        menuOverlay.classList.remove('active'); 
+        body.classList.remove('menu-open');
+        menuBtn.textContent = "Menu";
+        
+        // On retire les styles inline pour laisser le CSS (Dark/Light mode) reprendre la main
+        menuBtn.style.background = ""; 
+        menuBtn.style.color = "";
     }
+}
 
-    if (btnUnivBack && univIntroBlock && univProjectsContainer) {
-        btnUnivBack.addEventListener('click', function() {
-            univProjectsContainer.classList.remove('visible');
-            setTimeout(() => {
-                univIntroBlock.classList.remove('hidden');
-            }, 500);
-        });
-    }
+menuBtn.addEventListener('click', toggleMenu);
+menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
 
-    // --- GESTION DU TOGGLE PROJETS PERSO ---
-    const btnPersoDiscover = document.getElementById('btn-perso-discover');
-    const btnPersoBack = document.getElementById('btn-perso-back');
 
-    if (btnPersoDiscover && persoIntroBlock && persoProjectsContainer) {
-        btnPersoDiscover.addEventListener('click', function(e) {
-            e.preventDefault(); 
-            persoIntroBlock.classList.add('hidden');
-            setTimeout(() => {
-                persoProjectsContainer.classList.add('visible');
-            }, 300);
-        });
-    }
-
-    if (btnPersoBack && persoIntroBlock && persoProjectsContainer) {
-        btnPersoBack.addEventListener('click', function() {
-            persoProjectsContainer.classList.remove('visible');
-            setTimeout(() => {
-                persoIntroBlock.classList.remove('hidden');
-            }, 500);
-        });
-    }
-
-    // =========================================
-    // --- GESTION DE LA MODALE (POPUP) ---
-    // =========================================
-
-    // 1. Base de données des projets
-    const projectsData = {
-        "mercato": {
-            title: "Mercato Viz",
-            category: "Data Visualisation / Web",
-            images: ["Images/Mercatoviz.png", "Images/Mercatoviz2.png", "Images/Mercatoviz3.png", "Images/Mercatoviz4.png", "Images/Mercatoviz5.png"], 
-            stack: "HTML, CSS, JavaScript (D3.js), GitHub, VScode",
-            description: `Ce projet a été réalisé dans le cadre d'un projet universitaire (module DataViz). L'objectif était de concevoir un site web interactif capable de raconter l'évolution d'un phénomène à travers la donnée.
-
-            Nous avons choisi d'analyser le marché des transferts de football pour répondre à cette consigne. Le site est hébergé sur GitHub, et permet de visualiser l'inflation des prix et les tendances du marché, alliant ainsi développement technique et analyse de l'information.`,
-            link: "https://idrisouus.github.io/Mercato_Viz/"
-        },
-        "inventory": {
-            title: "Web Inventory",
-            category: "Développement Back-end / SQL",
-            images: ["Images/Webinventory2.png", "Images/Webinventory3.png", "Images/Webinventory4.png", "Images/Webinventory5.png"],
-            stack: "PHP, MySQL,HTML/CSS, JavaScript, VScode",
-            description: `Ce projet m'a permis de créer un site web d'inventaire complet. J'ai sélectionné un sujet qui m'intéressait, à savoir la composition de l'équipe du Paris Saint-Germain. Pour réussir, nous devions impérativement intégrer une base de données et utiliser des technologies spécifiques. J'ai ainsi pu développer des fonctionnalités essentielles comme le tri dynamique et le filtrage des joueurs.`,
-            link: "https://webinventory.legedza.projetsmmichamps.fr"
-        },
-        "teloche": {
-            title: "La Téloche",
-            category: "Audiovisuel / Montage Vidéo",
-            images: ["Images/lateloche.png"],
-            stack: "Premiere Pro, After Effects, Caméra 4K",
-            description: `Description`,
-            link: "https://youtube.com/..."
-        },
-    };
-
-    // 2. Sélection des éléments du DOM
-    const modalOverlay = document.getElementById('project-modal');
-    const modalCloseBtn = document.querySelector('.modal-close');
-    const modalTitle = document.getElementById('modal-title');
-    const modalTags = document.getElementById('modal-tags');
-    const swiperWrapper = document.getElementById('swiper-wrapper-content'); 
+// --- ANIMATIONS ---
+function initScrollAnimations() {
+    // On cible aussi les cartes projets qui viennent d'être chargées
+    const scrollElements = document.querySelectorAll('.card, .skill-card, .contact-section-inner');
     
-    const modalDesc = document.getElementById('modal-desc');
-    const modalStack = document.getElementById('modal-stack'); 
-    const modalLinkBtn = document.getElementById('modal-btn-link');
-
-    const projectLinks = document.querySelectorAll('.small-link');
-
-    // Variable pour stocker l'instance du Swiper
-    let mySwiper = null;
-
-    // 3. Fonction pour ouvrir la modale
-    projectLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const projectId = this.getAttribute('data-id');
-            
-            if (projectsData[projectId]) {
-                const data = projectsData[projectId];
-                
-                modalTitle.innerHTML = data.title;
-                modalTags.innerHTML = data.category;
-                modalDesc.innerHTML = data.description;
-                modalStack.innerHTML = data.stack ? data.stack : "Non spécifié";
-
-                // --- GESTION DU SWIPER (Carrousel) ---
-                
-                // 1. Vider le contenu précédent du carrousel
-                swiperWrapper.innerHTML = '';
-
-                // 2. Générer les slides pour chaque image du tableau
-                if (data.images && data.images.length > 0) {
-                    data.images.forEach(imgSrc => {
-                        const slideDiv = document.createElement('div');
-                        slideDiv.className = 'swiper-slide';
-                        
-                        const img = document.createElement('img');
-                        img.src = imgSrc;
-                        img.alt = data.title;
-                        
-                        slideDiv.appendChild(img);
-                        swiperWrapper.appendChild(slideDiv);
-                    });
-                } else {
-                    // Fallback si pas d'image
-                    swiperWrapper.innerHTML = '<div class="swiper-slide"><p>Aucune image</p></div>';
-                }
-
-                // 3. Initialiser (ou réinitialiser) Swiper
-                if (mySwiper) {
-                    mySwiper.destroy(true, true); 
-                }
-
-                // --- CORRECTION DU BUG ICI ---
-                mySwiper = new Swiper(".mySwiper", {
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                    },
-                    loop: true, 
-                    grabCursor: true, 
-                    autoHeight: false, 
-                    
-                    // CES DEUX LIGNES CORRIGENT LE BUG D'AFFICHAGE DANS LA MODALE :
-                    observer: true, 
-                    observeParents: true 
-                });
-
-                // --- FIN GESTION SWIPER ---
-
-                if (modalLinkBtn) {
-                    if (data.link && data.link !== "#") {
-                        modalLinkBtn.href = data.link;
-                        modalLinkBtn.style.display = "inline-block";
-                    } else {
-                        modalLinkBtn.href = "#";
-                        modalLinkBtn.style.display = "none";
-                    }
-                }
-                
-                modalOverlay.classList.add('active');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                // Une fois apparu, on peut arrêter d'observer pour la performance
+                observer.unobserve(entry.target);
             }
         });
+    }, { threshold: 0.1 });
+
+    scrollElements.forEach(el => {
+        // On applique le style initial seulement si l'élément n'est pas déjà visible
+        if(el.style.opacity !== '1') {
+            el.style.opacity = 0; 
+            el.style.transform = 'translateY(30px)'; 
+            el.style.transition = 'all 0.6s ease-out'; 
+            observer.observe(el);
+        }
     });
+}
 
-    // 4. Fonction pour fermer la modale
-    function closeModal() {
-        modalOverlay.classList.remove('active');
-    }
+// Initialisation globale
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Charger les projets
+    loadProjects();
 
-    if (modalCloseBtn) {
-        modalCloseBtn.addEventListener('click', closeModal);
-    }
-
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', function(e) {
-            if (e.target === modalOverlay) {
-                closeModal();
-            }
-        });
-    }
-
-
-}); // Fin du DOMContentLoaded
+    // 2. Observer les éléments statiques (compétences, contact)
+    // Note : initScrollAnimations s'occupera de tout, pas besoin de dupliquer le code ici
+    initScrollAnimations();
+});
