@@ -162,3 +162,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Note : initScrollAnimations s'occupera de tout, pas besoin de dupliquer le code ici
     initScrollAnimations();
 });
+// --- GESTION DE LA LUEUR (MOUSE GLOW) ---
+    const glow = document.querySelector('.mouse-glow');
+    
+    if (glow) {
+        window.addEventListener('mousemove', (e) => {
+            // Rend la lueur visible au mouvement
+            glow.style.opacity = '1';
+            // Déplace la lueur à la position de la souris
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    }

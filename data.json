@@ -7,7 +7,7 @@
     "description": "Analyse interactive du marché des transferts de football, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "MercatoViz.png"
+    "mediaSrc": "img/MercatoViz.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "description": "Réalisation d'un court-métrage avec incrustation fond vert, création universitaire.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "lateloche.png"
+    "mediaSrc": "img/lateloche.png"
   },
   {
     "id": 3,
@@ -27,27 +27,27 @@
     "description": "Création d'affiches de joueurs de foot, création personnelle.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "4.png"
+    "mediaSrc": "img/4.png"
+  },
+    {
+    "id": 4,
+    "title": "Mini blog",
+    "category": "Web"  ,
+    "tagColor": "teal",
+    "description": "Réalisation d'un mini blog interactif, création universitaire.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "img/miniblog.png"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Web Inventory",
     "category": "Web",
     "tagColor": "teal",
     "description": "Création d'un site web d'inventaire sur le sujet de son choix, création universitaire.",
-    "layout": "normal",
-    "mediaType": "image",
-    "mediaSrc": "webinventory.png"
-  },
-  {
-    "id": 5,
-    "title": "Campagne institutionnelle",
-    "category": "Maquettage",
-    "tagColor": "teal",
-    "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "Campagne.jpg"
+    "mediaSrc": "img/webinventory.png"
   },
   {
     "id": 6,
@@ -57,26 +57,26 @@
     "description": "Réalisation d'un livret sur un film donné, création universitaire.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "livret.png"
+    "mediaSrc": "img/livret.png"
   },
-  {
+    {
     "id": 7,
-    "title": "Mini blog",
-    "category": "Web"  ,
+    "title": "Campagne institutionnelle",
+    "category": "Maquettage",
     "tagColor": "teal",
-    "description": "Réalisation d'un mini blog interactif, création universitaire.",
-    "layout": "normal",
+    "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
+    "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "miniblog.png"
+    "mediaSrc": "img/Campagne.jpg"
   },
   {
     "id": 8,
-    "title": "Affiche de sensibilisation",
-    "category": "Design"  ,
+    "title": "Interview",
+    "category": "Montage",
     "tagColor": "teal",
-    "description": "Réalisation d'une affiche de sensibilisation sur un sujet donné, création universitaire.",
-    "layout": "normal",
+    "description": "Réalisation d'une interview d'un journaliste, création universitaire.",
+    "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "sensi.png"
+    "mediaSrc": "img/interview.png"
   }
 ]
