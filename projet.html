@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Projet - Mathieu Legedza</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+
+    <div class="animated-bg"></div>
+
+    <header style="position: relative; background: transparent;">
+        <div class="logo-container">
+            <a href="index.html"><img src="img/Logo.png" alt="Logo" class="logo-img"></a>
+        </div>
+    </header>
+
+    <main class="project-page-wrapper">
+        <div class="project-container">
+            
+            <section class="project-hero">
+                <div class="project-hero-content">
+                    <h1 id="p-title">Chargement...</h1>
+                    <div class="project-meta">
+                        <span id="p-category">...</span> • <span id="p-year">...</span>
+                    </div>
+                    
+                    <div class="project-buttons">
+                        <a id="p-link" href="#" target="_blank" class="action-btn">
+                            Voir le projet ↗
+                        </a>
+                        <a href="index.html#projects" class="back-btn">
+                            ← Retour
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-hero-image">
+                    <img id="p-img" src="" alt="Image projet">
+                </div>
+            </section>
+
+            <section class="project-presentation-full">
+                <h2 class="section-subtitle">PRÉSENTATION</h2>
+                <p id="p-long-desc" class="long-text"></p>
+            </section>
+
+            <section class="project-body-grid">
+                
+                <div class="project-main-col">
+                    <h2 class="section-subtitle" id="gallery-title">GALERIE</h2>
+                    
+                    <div id="simple-carousel-container" class="simple-carousel">
+                        </div>
+                </div>
+
+                <aside class="project-sidebar-col">
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">DÉTAILS PROJET</h3>
+                        
+                        <div class="sidebar-item">
+                            <h4>TECHNOLOGIES UTILISÉES</h4>
+                            <div id="p-techs" class="tech-tags"></div>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <h4>TYPE DE PROJETS</h4>
+                            <p id="p-interest">-</p>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <h4>RÔLE</h4>
+                            <p id="p-role">-</p>
+                        </div>
+
+                        <div class="sidebar-item">
+                            <h4>DURÉE DE RÉALISATION</h4>
+                            <p id="p-duration">-</p>
+                        </div>
+                    </div>
+                </aside>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div>© 2025 Mathieu Legedza. Tous droits réservés.</div>
+    </footer>
+
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') document.body.classList.add('dark-mode');
+    </script>
+    
+    <script src="project-script.js"></script>
+    
+</body>
+</html>

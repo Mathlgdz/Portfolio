@@ -7,7 +7,18 @@
     "description": "Analyse interactive du marché des transferts de football, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/MercatoViz.png"
+    "mediaSrc": "img/MercatoViz.png",
+    "descriptionpage": "Ce projet a été réalisé dans le cadre d'un projet universitaire (module DataViz). L'objectif était de concevoir un site web interactif capable de raconter l'évolution d'un phénomène à travers la donnée. De notre côté avec mon groupe nous avons choisi d'analyser le marché des transferts de football sur les 15 dernières années. Nous avons utilisé des données provenant de Transfermarkt et nous avons créé plusieurs visualisations interactives pour permettre aux utilisateurs d'explorer les tendances et les évolutions du marché des transferts. Le site web permet de filtrer les données par ligue, par club, par joueur, et par période, offrant ainsi une expérience utilisateur riche et engageante.",
+    "année": "2025",
+    "technologies": "Javascript, D3.js, HTML, CSS",
+    "lien": "https://idrisouus.github.io/Mercato_Viz/",
+    "typedeprojet": "Projet universitaire",
+    "role": "Développeur front",
+    "duree": "2 mois",
+    "images1": "img/Mercatoviz2.png",
+    "images2": "img/Mercatoviz3.png",
+    "images3": "img/Mercatoviz4.png",
+    "images4": "img/Mercatoviz5.png"
   },
   {
     "id": 2,
@@ -17,7 +28,18 @@
     "description": "Réalisation d'un court-métrage avec incrustation fond vert, création universitaire.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "img/lateloche.png"
+    "mediaSrc": "img/lateloche.png",
+    "descriptionpage": "",
+    "année": "2025",
+    "technologies": "",
+    "lien": "",
+    "typedeprojet": "Projet universitaire",
+    "role": "",
+    "duree": "",
+    "images1": "",
+    "images2": "",
+    "images3": "",
+    "images4": ""
   },
   {
     "id": 3,
@@ -27,7 +49,23 @@
     "description": "Création d'affiches de joueurs de foot, création personnelle.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "img/4.png"
+    "mediaSrc": "img/Affiche.png",
+    "descriptionpage": "Passionné par le football, je profite de mon temps libre pour développer mes compétences en création graphique. Je conçois régulièrement des affiches et des visuels sportifs, ce qui me permet d'expérimenter de nouvelles techniques. Je suis dans une démarche d'amélioration continue : j'analyse mes précédentes réalisations pour identifier mes axes de progrès et m'efforce, à chaque nouveau projet, de proposer un design plus abouti et professionnel.",
+    "année": "2025",
+    "technologies": "Photoshop, Canva",
+    "lien": "",
+    "typedeprojet": "Projet presonnel",
+    "role": "Créateur graphique",
+    "duree": "Indéterminée",
+    "images1": "img/1.jpg",
+    "images2": "img/2.jpg",
+    "images3": "img/3.jpg",
+    "images4": "img/4.jpg",
+    "images5": "img/5.jpg",
+    "images6": "img/6.jpg",
+    "images7": "img/7.jpg",
+    "images8": "img/8.jpg",
+    "images9": "img/9.jpg"
   },
     {
     "id": 4,
@@ -37,7 +75,18 @@
     "description": "Réalisation d'un mini blog interactif, création universitaire.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "img/miniblog.png"
+    "mediaSrc": "img/miniblog.png",
+    "descriptionpage": "",
+    "année": "2025",
+    "technologies": "",
+    "lien": "",
+    "typedeprojet": "Projet universitaire",
+    "role": "",
+    "duree": "",
+    "images1": "",
+    "images2": "",
+    "images3": "",
+    "images4": ""
   },
   {
     "id": 5,
@@ -47,7 +96,18 @@
     "description": "Création d'un site web d'inventaire sur le sujet de son choix, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/webinventory.png"
+    "mediaSrc": "img/webinventory.png",
+    "descriptionpage": "",
+    "année": "2025",
+    "technologies": "",
+    "lien": "",
+    "typedeprojet": "Projet universitaire",
+    "role": "",
+    "duree": "",
+    "images1": "",
+    "images2": "",
+    "images3": "",
+    "images4": ""
   },
   {
     "id": 6,
@@ -57,7 +117,18 @@
     "description": "Réalisation d'un livret sur un film donné, création universitaire.",
     "layout": "normal",
     "mediaType": "image",
-    "mediaSrc": "img/livret.png"
+    "mediaSrc": "img/livret.png",
+    "descriptionpage": "",
+    "année": "2025",
+    "technologies": "",
+    "lien": "",
+    "typedeprojet": "Projet universitaire",
+    "role": "",
+    "duree": "",
+    "images1": "",
+    "images2": "",
+    "images3": "",
+    "images4": ""
   },
     {
     "id": 7,
@@ -67,7 +138,19 @@
     "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/Campagne.jpg"
+    "mediaSrc": "img/Campagne.jpg",
+    "descriptionpage": "Le but du projet était de créer une campagne complète (web et papier) pour rendre une ville plus attractive grâce à un événement. Avec mon groupe, on a choisi la ville de Ballancourt-sur-Essonne et on a décidé de miser sur son club de football. On a commencé par moderniser l'image du club en créant un tout nouveau logo. Ensuite, on a décliné cette identité sur plusieurs supports : une page d'accueil de site web adaptée aux mobiles, des bannières publicitaires pour internet et des affiches pour la ville.",
+    "année": "2025",
+    "technologies": "Figma, Photoshop, Illustrator",
+    "lien": "https://www.figma.com/design/epibafU2JEZX1X7XG6Apb8/Campagne-institutionnelle?node-id=0-1&t=DUWnuK3EAXnhnLJ4-1",
+    "typedeprojet": "Projet universitaire",
+    "role": "Designer graphique",
+    "duree": "2 mois",
+    "images1": "img/campagne2.jpg",
+    "images2": "img/campagne3.jpg",
+    "images3": "img/campagne4.jpg",
+    "images4": "img/campagne5.jpg",
+    "images5": "img/Campagne.jpg"
   },
   {
     "id": 8,
@@ -77,6 +160,17 @@
     "description": "Réalisation d'une interview d'un journaliste, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/interview.png"
+    "mediaSrc": "img/interview.png",
+    "descriptionpage": "",
+    "année": "2025",
+    "technologies": "",
+    "lien": "",
+    "typedeprojet": "Projet universitaire",
+    "role": "",
+    "duree": "",
+    "images1": "",
+    "images2": "",
+    "images3": "",
+    "images4": ""
   }
 ]
