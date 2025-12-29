@@ -7,7 +7,7 @@
     "description": "Analyse interactive du marché des transferts de football, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/MercatoViz.png",
+    "mediaSrc": "img/Mercatoviz.png",
     "descriptionpage": "Ce projet a été réalisé dans le cadre d'un projet universitaire (module DataViz). L'objectif était de concevoir un site web interactif capable de raconter l'évolution d'un phénomène à travers la donnée. De notre côté avec mon groupe nous avons choisi d'analyser le marché des transferts de football sur les 15 dernières années. Nous avons utilisé des données provenant de Transfermarkt et nous avons créé plusieurs visualisations interactives pour permettre aux utilisateurs d'explorer les tendances et les évolutions du marché des transferts. Le site web permet de filtrer les données par ligue, par club, par joueur, et par période, offrant ainsi une expérience utilisateur riche et engageante.",
     "année": "2025",
     "technologies": "Javascript, D3.js, HTML, CSS",
@@ -173,4 +173,5 @@
     "images3": "",
     "images4": ""
   }
+
 ]
