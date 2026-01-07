@@ -95,7 +95,8 @@ menuBtn.addEventListener('click', toggleMenu);
 menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
 function initScrollAnimations() {
-    const scrollElements = document.querySelectorAll('.card, .skill-card, .contact-card');
+    // MODIFICATION ICI : Ajout de .cv-card dans la liste des éléments surveillés
+    const scrollElements = document.querySelectorAll('.card, .skill-card, .contact-card, .cv-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

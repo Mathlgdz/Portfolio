@@ -117,6 +117,7 @@ body.menu-open .logo-img { filter: invert(0) brightness(2); }
 .menu-overlay.active li:nth-child(2) .menu-link { transition-delay: 0.2s; }
 .menu-overlay.active li:nth-child(3) .menu-link { transition-delay: 0.3s; }
 .menu-overlay.active li:nth-child(4) .menu-link { transition-delay: 0.4s; }
+.menu-overlay.active li:nth-child(5) .menu-link { transition-delay: 0.5s; } /* Ajouté pour le 5ème lien */
 .menu-link:hover { color: var(--col-teal); }
 .menu-bg-deco {
     position: absolute; font-family: var(--font-display); font-size: 20vw; color: rgba(255, 255, 255, 0.05);
@@ -256,7 +257,7 @@ footer { padding: 40px; display: flex; justify-content: space-between; align-ite
     footer { flex-direction: column; gap: 10px; align-items: flex-start; }
     .menu-bg-deco { font-size: 15vw; }
 }
-/* --- LUEUR SOURIS (À AJOUTER) --- */
+/* --- LUEUR SOURIS --- */
 .mouse-glow {
     position: fixed;
     top: 0; left: 0;
@@ -272,7 +273,7 @@ footer { padding: 40px; display: flex; justify-content: space-between; align-ite
     transition: opacity 0.5s ease;
 }
 
-/* Version Mode Sombre (optionnel) */
+/* Version Mode Sombre */
 body.dark-mode .mouse-glow {
     background: radial-gradient(circle, rgba(6, 158, 172, 0.207) 0%, transparent 90%);
 }
@@ -369,3 +370,131 @@ body.dark-mode .contact-card:hover .contact-icon {
 body.dark-mode .contact-card p {
     color: #cccccc;
 }
+
+/* --- SECTION CV (NOUVEAU - AVEC IMAGE) --- */
+.cv-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cv-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    opacity: 0; /* Pour l'animation JS */
+    perspective: 1000px; /* Nécessaire pour l'effet 3D de l'image */
+}
+
+.cv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: var(--col-teal);
+}
+
+.cv-content {
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.cv-content h3 {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--col-deep-blue);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.cv-content p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--col-deep-blue);
+    color: var(--text-light);
+    padding: 12px 25px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    transform: skewX(-10deg);
+}
+
+.cv-btn span, .cv-btn svg { transform: skewX(10deg); }
+.cv-btn svg { width: 20px; height: 20px; }
+
+.cv-btn:hover {
+    background: var(--col-teal);
+    transform: skewX(-10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 95, 103, 0.3);
+}
+
+/* Zone visuelle droite modifiée pour l'image */
+.cv-visual {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(0, 95, 103, 0.05) 0%, rgba(14, 39, 50, 0.05) 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* Style de l'image d'aperçu */
+.cv-img-preview {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transform: rotateY(-5deg) rotateX(5deg); /* Effet 3D léger */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background: white; /* Sécurité si PNG transparent */
+}
+
+
+/* RESPONSIVE CV */
+@media (max-width: 768px) {
+    .cv-card { flex-direction: column; }
+    .cv-visual { display: none; /* On cache toujours l'image sur mobile pour la place */ }
+    .cv-content { align-items: center; text-align: center; }
+    .cv-content h3 { font-size: 2rem; }
+}
+
+/* MODE SOMBRE CV */
+body.dark-mode .cv-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+body.dark-mode .cv-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--col-teal);
+}
+body.dark-mode .cv-content h3 { color: var(--text-light); }
+body.dark-mode .cv-content p { color: #cccccc; }
+body.dark-mode .cv-btn { background: var(--text-light); color: var(--col-deep-blue); }
+body.dark-mode .cv-btn:hover { background: var(--col-emerald); color: white; }
+body.dark-mode .cv-visual { background: rgba(0,0,0,0.2); }
+/* Ajout d'une bordure à l'image en mode sombre pour qu'elle ressorte */
+body.dark-mode .cv-img-preview { border: 1px solid rgba(255,255,255,0.2); }
