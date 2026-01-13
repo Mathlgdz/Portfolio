@@ -148,7 +148,7 @@
     "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/Campagne.jpg",
+    "mediaSrc": "img/fcb.png",
     "descriptionpage": "Le but du projet était de créer une campagne complète (web et papier) pour rendre une ville plus attractive grâce à un événement. Avec mon groupe, on a choisi la ville de Ballancourt-sur-Essonne et on a décidé de miser sur son club de football. On a commencé par moderniser l'image du club en créant un tout nouveau logo. Ensuite, on a décliné cette identité sur plusieurs supports : une page d'accueil de site web adaptée aux mobiles, des bannières publicitaires pour internet et des affiches pour la ville. On a du rendre un dossier contenant toutes nos créations.",
     "année": "Novembre 2025",
     "technologies": "Figma, Photoshop, Illustrator",
@@ -186,4 +186,5 @@
     "images4": "img/nutriway4.png",
     "images5": "img/nutriway5.png"
   }
+
 ]
