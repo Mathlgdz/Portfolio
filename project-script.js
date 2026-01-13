@@ -46,7 +46,13 @@ async function loadProjectDetails() {
         }
 
         setText('p-long-desc', project.descriptionpage || project.description);
+        
+        // --- Sidebar ---
         setText('p-interest', project.typedeprojet || "Projet Universitaire");
+        
+        // CORRECTION ICI : Ajout de la liaison pour la réalisation du projet
+        setText('p-realisation', project.realisationduprojet || "Non spécifié");
+        
         setText('p-role', project.role || "Créateur");
         setText('p-duration', project.duree || "N/C");
 

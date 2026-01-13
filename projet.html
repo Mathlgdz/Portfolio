@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+     <link rel="icon" type="image/png" href="img/Logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails du Projet - Mathieu Legedza</title>
     
@@ -14,6 +15,8 @@
 <body>
 
     <div class="animated-bg"></div>
+    <div class="mouse-glow"></div>  
+
 
     <header style="position: relative; background: transparent;">
         <div class="logo-container">
@@ -75,6 +78,11 @@
                         </div>
 
                         <div class="sidebar-item">
+                            <h4>RÉALISATION DU PROJET</h4>
+                            <p id="p-realisation">-</p>
+                        </div>
+
+                        <div class="sidebar-item">
                             <h4>RÔLE</h4>
                             <p id="p-role">-</p>
                         </div>
@@ -99,7 +107,7 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') document.body.classList.add('dark-mode');
     </script>
-    
+
     <script src="project-script.js"></script>
     
 </body>

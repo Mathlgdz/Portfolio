@@ -95,8 +95,8 @@ menuBtn.addEventListener('click', toggleMenu);
 menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
 
 function initScrollAnimations() {
-    // MODIFICATION ICI : Ajout de .cv-card dans la liste des éléments surveillés
-    const scrollElements = document.querySelectorAll('.card, .skill-card, .contact-card, .cv-card');
+    // AJOUT DE .about-card DANS LE SELECTEUR CI-DESSOUS
+    const scrollElements = document.querySelectorAll('.card, .skill-card, .contact-card, .cv-card, .testimonial-card, .about-card');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -117,9 +117,60 @@ function initScrollAnimations() {
     });
 }
 
+// --- PRELOADER LOGIC (MODIFIÉE) ---
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
+    if (!preloader) return;
+
+    // Vérifie si l'utilisateur a déjà vu l'intro durant cette session
+    const hasSeenIntro = sessionStorage.getItem('introSeen');
+
+    if (hasSeenIntro) {
+        // CAS : DÉJÀ VU
+        preloader.style.transition = 'none'; 
+        preloader.style.display = 'none'; // On le cache brutalement
+        document.body.classList.remove('loading');
+
+        const heroTitle = document.querySelector('.hero h1');
+        if(heroTitle) heroTitle.style.animationPlayState = 'running';
+
+    } else {
+        // CAS : PREMIÈRE FOIS
+        document.body.classList.add('loading');
+        
+        sessionStorage.setItem('introSeen', 'true');
+
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+            document.body.classList.remove('loading');
+            
+            const heroTitle = document.querySelector('.hero h1');
+            if(heroTitle) heroTitle.style.animationPlayState = 'running';
+            
+        }, 2000); // 2 secondes
+    }
+}
+
+// --- Modification : HORLOGE HEADER ---
+function updateClock() {
+    const clockEl = document.getElementById('clock');
+    if (!clockEl) return;
+
+    const now = new Date();
+    // Format français HH:MM
+    const timeString = now.toLocaleTimeString('fr-FR', { 
+        hour: '2-digit', 
+        minute: '2-digit' 
+    });
+
+    clockEl.textContent = timeString;
+}
+
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
     loadProjects();
+    
     // Mouse Glow
     const glow = document.querySelector('.mouse-glow');
     if (glow) {
@@ -129,4 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
             glow.style.top = e.clientY + 'px';
         });
     }
+
+    // Lancer l'horloge
+    updateClock();
+    setInterval(updateClock, 1000);
 });
