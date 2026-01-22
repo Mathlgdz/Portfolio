@@ -72,7 +72,8 @@
     "images7": "img/7.jpg",
     "images8": "img/8.jpg",
     "images9": "img/9.jpg",
-    "images10": "img/Leao_Portugal.png"
+    "images10": "img/Leao_Portugal.png",
+    "image11": "img/Copenhague.png"
   },
     {
     "id": 4,
@@ -189,6 +190,7 @@
   }
 
 ]
+
 
 
 
