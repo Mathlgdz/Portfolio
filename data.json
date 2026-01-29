@@ -64,19 +64,16 @@
     "role": "Créateur graphique",
     "duree": "Indéterminée",
     "images1": "img/1.jpg",
-    "images2": "img/2.jpg",
-    "images3": "img/3.jpg",
-    "images4": "img/4.jpg",
-    "images5": "img/5.jpg",
-    "images6": "img/6.jpg",
-    "images7": "img/7.jpg",
-    "images8": "img/8.jpg",
-    "images9": "img/9.jpg",
-    "images10": "img/Leao_Portugal.png",
-    "images11": "img/Copenhague.png",
-    "images12": "img/Test_MAC_FABIAN.png",
-    "images13": "img/CR7.png",
-    "images14": "img/Juventus.jpg"
+    "images2": "img/4.jpg",
+    "images3": "img/5.jpg",
+    "images4": "img/6.jpg",
+    "images5": "img/8.jpg",
+    "images6": "img/9.jpg",
+    "images7": "img/Leao_Portugal.png",
+    "images8": "img/Copenhague.png",
+    "images9": "img/Test_MAC_FABIAN.png",
+    "images10": "img/CR7.png",
+    "images11": "img/Juventus.jpg"
   },
     {
     "id": 4,
@@ -193,6 +190,7 @@
   }
 
 ]
+
 
 
 
