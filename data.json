@@ -189,8 +189,30 @@
     "images4": "img/nutriway4.png",
     "images5": "img/nutriway5.png"
   }
+    {
+    "id": 9,
+    "title": "Social Media Bayer Leverkusen",
+    "category": "Graphisme",
+    "tagColor": "teal",
+    "description": "Réalisation d'un rebranding media des jours de match",
+    "layout": "wide",
+    "mediaType": "image",
+    "mediaSrc": "img/byl.jpg",
+    "descriptionpage": "",
+    "année": "Février 2026",
+    "technologies": "Photoshop, Illustrator",
+    "lien": "",
+    "typedeprojet": "Projet personnel",
+    "realisationduprojet":"Seul",
+    "role": "Graphiste",
+    "duree": "En cours",
+    "images1": "img/bayerlever.jpg",
+    "images2": "img/bayerlever2.jpg",
+    "images3": "img/bayerlever3.jpg"
+  }
 
 ]
+
 
 
 
