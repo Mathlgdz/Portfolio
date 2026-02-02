@@ -63,18 +63,17 @@
     "realisationduprojet":"Seul",
     "role": "Créateur graphique",
     "duree": "Indéterminée",
-    "images1": "img/1.jpg",
-    "images2": "img/4.jpg",
-    "images3": "img/5.jpg",
-    "images4": "img/6.jpg",
-    "images5": "img/8.jpg",
-    "images6": "img/9.jpg",
-    "images7": "img/Leao_Portugal.png",
-    "images8": "img/Copenhague.png",
-    "images9": "img/Test_MAC_FABIAN.png",
-    "images10": "img/CR7.png",
-    "images11": "img/Juventus.jpg",
-    "images12": "img/bayerlever.jpg"
+    "images1": "img/4.jpg",
+    "images2": "img/5.jpg",
+    "images3": "img/6.jpg",
+    "images4": "img/8.jpg",
+    "images5": "img/9.jpg",
+    "images6": "img/Leao_Portugal.png",
+    "images7": "img/Copenhague.png",
+    "images8": "img/Test_MAC_FABIAN.png",
+    "images9": "img/CR7.png",
+    "images10": "img/Juventus.jpg",
+    "images11": "img/bayerlever.jpg"
   },
     {
     "id": 4,
@@ -212,6 +211,7 @@
   }
 
 ]
+
 
 
 
