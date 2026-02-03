@@ -209,7 +209,7 @@
     "images1": "img/bayerlever.jpg",
     "images2": "img/bayerlever2.jpg",
     "images3": "img/bayerlever3.jpg"
-  }
+  },
     {
     "id": 10,
     "title": "Affiches",
@@ -229,9 +229,10 @@
     "duree": "Indéterminée",
     "images1": "img/thekingofthesavannah.jpg",
     "images2": "img/Vercors.jpg"
-  },
+  }
 
 ]
+
 
 
 
