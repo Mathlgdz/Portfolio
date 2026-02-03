@@ -210,8 +210,29 @@
     "images2": "img/bayerlever2.jpg",
     "images3": "img/bayerlever3.jpg"
   }
+    {
+    "id": 10,
+    "title": "Affiches",
+    "category": "Design",
+    "tagColor": "teal",
+    "description": "Création d'affiches, création personnelle.",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "img/Affiche.jpg",
+    "descriptionpage": "Passionné par la création visuelle, je consacre mon temps libre à développer mes compétences en design graphique. Je conçois régulièrement des affiches et des supports de communication variés, explorant différents univers pour expérimenter de nouvelles techniques. Dans une démarche d'amélioration continue, j'analyse systématiquement mes projets précédents afin d'identifier mes axes de progrès, m'efforçant ainsi de proposer, à chaque réalisation, un design plus abouti et professionnel.",
+    "année": "2026",
+    "technologies": "Photoshop",
+    "lien": "",
+    "typedeprojet": "Projet personnel",
+    "realisationduprojet":"Seul",
+    "role": "Créateur graphique",
+    "duree": "Indéterminée",
+    "images1": "img/thekingofthesavannah.jpg",
+    "images2": "img/Vercors.jpg"
+  },
 
 ]
+
 
 
 
