@@ -56,7 +56,7 @@
     "mediaType": "image",
     "mediaSrc": "img/Affiche.png",
     "descriptionpage": "Passionné par le football, je profite de mon temps libre pour développer mes compétences en création graphique. Je conçois régulièrement des affiches et des visuels sportifs, ce qui me permet d'expérimenter de nouvelles techniques. Je suis dans une démarche d'amélioration continue : j'analyse mes précédentes réalisations pour identifier mes axes de progrès et m'efforce, à chaque nouveau projet, de proposer un design plus abouti et professionnel.",
-    "année": "2025",
+    "année": "2025 - ",
     "technologies": "Photoshop, Canva",
     "lien": "",
     "typedeprojet": "Projet personnel",
@@ -221,7 +221,7 @@
     "mediaType": "image",
     "mediaSrc": "img/Affiche.jpg",
     "descriptionpage": "Passionné par la création visuelle, je consacre mon temps libre à développer mes compétences en design graphique. Je conçois régulièrement des affiches et des supports de communication variés, explorant différents univers pour expérimenter de nouvelles techniques. Dans une démarche d'amélioration continue, j'analyse systématiquement mes projets précédents afin d'identifier mes axes de progrès, m'efforçant ainsi de proposer, à chaque réalisation, un design plus abouti et professionnel.",
-    "année": "2026",
+    "année": "2026 - ",
     "technologies": "Photoshop",
     "lien": "",
     "typedeprojet": "Projet personnel",
@@ -236,6 +236,7 @@
     "images6": "img/stvalentin.jpg"
   }
 ]
+
 
 
 
