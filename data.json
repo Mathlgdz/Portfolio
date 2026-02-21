@@ -65,21 +65,17 @@
     "duree": "Indéterminée",
     "images1": "img/4.jpg",
     "images2": "img/5.jpg",
-    "images3": "img/6.jpg",
-    "images4": "img/8.jpg",
-    "images5": "img/9.jpg",
-    "images6": "img/Leao_Portugal.png",
-    "images7": "img/Copenhague.png",
-    "images8": "img/Test_MAC_FABIAN.png",
-    "images9": "img/CR7.png",
-    "images10": "img/Juventus.jpg",
-    "images11": "img/bayerlever.jpg",
-    "images12": "img/dembouz.jpg",
-    "images13": "img/pacho.jpg",
-    "images14": "img/mbappe.jpg",
-    "images15": "img/doue.jpg",
-    "images16": "img/vini.jpg",
-    "images17": "img/everton.jpg"
+    "images3": "img/9.jpg",
+    "images4": "img/Leao_Portugal.png",
+    "images5": "img/CR7.png",
+    "images6": "img/Juventus.jpg",
+    "images7": "img/bayerlever.jpg",
+    "images8": "img/dembouz.jpg",
+    "images9": "img/pacho.jpg",
+    "images10": "img/mbappe.jpg",
+    "images11": "img/doue.jpg",
+    "images12": "img/vini.jpg",
+    "images13": "img/everton.jpg"
   },
     {
     "id": 4,
@@ -241,6 +237,7 @@
     "images7": "img/niketn.jpg"
   }
 ]
+
 
 
 
