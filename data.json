@@ -83,7 +83,7 @@
     "category": "Dev Web",
     "tagColor": "teal",
     "description": "Création d'un site web d'inventaire sur le sujet de son choix, création universitaire.",
-    "layout": "wide",
+    "layout": "normal",
     "mediaType": "image",
     "mediaSrc": "img/webinventory.png",
     "descriptionpage": "Dans le cadre d’un projet individuel sur tout un semestre , j’ai conçu et développé une plateforme d'inventaire dédiée à l'effectif du Paris Saint-Germain sur la saison 2024 - 2025. Passionné par le football, j'ai voulu créer un outil performant permettant de répertorier, trier et gérer dynamiquement les joueurs selon divers critères (nationalités, postes). Après la maquette du site réalisé sur Figma et la structure sur MySQL, j’ai développé la logique en  PHP et l’interface JavaScript pour permettre une recherche et un tri en temps réel.",
@@ -193,6 +193,7 @@
     "images7": "img/niketn.jpg"
   }
 ]
+
 
 
 
