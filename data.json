@@ -22,32 +22,9 @@
     "images4": "img/Mercatoviz4.png",
     "images5": "img/Mercatoviz5.png"
   },
+  
   {
     "id": 2,
-    "title": "La téloche",
-    "category": "Court-métrage",
-    "tagColor": "green",
-    "description": "Réalisation d'un court-métrage avec incrustation fond vert, création universitaire.",
-    "layout": "normal",
-    "mediaType": "image",
-    "mediaSrc": "img/lateloche.png",
-    "descriptionpage": "Dans le cadre d'un projet audiovisuel collectif en deuxième année de BUT,  j'ai réalisé le montage individuel d'un court-métrage de deux minutes explorant le basculement du monde réel vers un monde fictif à travers l'écran de télévision. Le tournage a impliqué l'utilisation de fonds verts pour créer des incrustations visuelles, tandis que le montage a été effectué à l'aide de Premiere Pro et de After Effects. Ce projet m'a permis de développer mes compétences en production audiovisuelle, en particulier dans la gestion des effets spéciaux et du montage vidéo.",
-    "année": "Janvier 2026",
-    "technologies": "Premiere Pro, After Effects",
-    "lien": "https://youtu.be/xf9mHkqK0rQ",
-    "typedeprojet": "Projet universitaire",
-    "realisationduprojet":"Groupe (tournage / 4) & Seul (montage)",
-    "role": "Monteur",
-    "duree": "4 mois",
-    "images1": "img/lateloche.png",
-    "images2": "img/lateloche2.png",
-    "images3": "img/lateloche3.png",
-    "images4": "img/lateloche4.png",
-    "images5": "img/lateloche5.png",
-    "images6": "img/lateloche6.png"
-  },
-  {
-    "id": 3,
     "title": "Affiches Foot",
     "category": "Design",
     "tagColor": "teal",
@@ -79,7 +56,7 @@
     "images14": "img/lorient.jpg"
   },
     {
-    "id": 4,
+    "id": 3,
     "title": "Mini blog",
     "category": "Dev Web"  ,
     "tagColor": "teal",
@@ -101,7 +78,7 @@
     "images4": "img/miniblog4.png"
   },
   {
-    "id": 5,
+    "id": 4,
     "title": "Web Inventory",
     "category": "Dev Web",
     "tagColor": "teal",
@@ -123,30 +100,8 @@
     "images4": "img/webinventory4.png"
 
   },
-  {
-    "id": 6,
-    "title": "Livret Filmique",
-    "category": "Design"  ,
-    "tagColor": "teal",
-    "description": "Réalisation d'un livret sur un film donné, création universitaire.",
-    "layout": "normal",
-    "mediaType": "image",
-    "mediaSrc": "img/livret.png",
-    "descriptionpage": "Dans le cadre de ma première année en BUT MMI (Métiers du Multimédia et de L’internet), j’ai conçu un livret d’analyse filmique consacré au film Hitchcock de Sacha Gervasi. L’enjeu était d'analyser l’esthétique du réalisateur à travers l’étude de séquences clés, l’analyse de la psychologie des personnages et la réalisation de storyboards. J’ai réalisé l’intégralité de la conception graphique : de la création de l’identité visuelle, jusqu’à la mise en page finale sur InDesign.",
-    "année": "Décembre 2024",
-    "technologies": "InDesign, Photoshop",
-    "lien": "Livret-Mathieu-Legedza.pdf",
-    "typedeprojet": "Projet universitaire",
-    "realisationduprojet":"Seul",
-    "role": "Designer graphique",
-    "duree": "2 mois",
-    "images1": "img/livret.png",
-    "images2": "img/livret2.png",
-    "images3": "img/livret3.png",
-    "images4": "img/livret4.png"
-  },
     {
-    "id": 7,
+    "id": 5,
     "title": "Campagne institutionnelle",
     "category": "Maquettage",
     "tagColor": "teal",
@@ -169,7 +124,7 @@
     "images5": "img/Campagne.jpg"
   },
   {
-    "id": 8,
+    "id": 6,
     "title": "Health Nutri Way",
     "category": "Dev Web",
     "tagColor": "teal",
@@ -192,7 +147,7 @@
     "images5": "img/nutriway5.png"
   },
     {
-    "id": 9,
+    "id": 7,
     "title": "Social Media Bayer Leverkusen",
     "category": "Graphisme",
     "tagColor": "teal",
@@ -213,7 +168,7 @@
     "images3": "img/bayerlever3.jpg"
   },
     {
-    "id": 10,
+    "id": 8,
     "title": "Affiches",
     "category": "Design",
     "tagColor": "teal",
@@ -238,6 +193,7 @@
     "images7": "img/niketn.jpg"
   }
 ]
+
 
 
 
