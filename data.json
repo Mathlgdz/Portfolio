@@ -129,7 +129,7 @@
     "category": "Dev Web",
     "tagColor": "teal",
     "description": "Réalisation d'un site web collaboratif sur le thème de la cuisine.",
-    "layout": "wide",
+    "layout": "normal",
     "mediaType": "image",
     "mediaSrc": "img/nutriway.png",
     "descriptionpage": "",
@@ -193,6 +193,7 @@
     "images7": "img/niketn.jpg"
   }
 ]
+
 
 
 
