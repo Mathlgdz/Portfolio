@@ -103,26 +103,26 @@
   },
     {
     "id": 5,
-    "title": "Campagne institutionnelle",
+    "title": "Campagne de communication",
     "category": "Maquettage",
     "tagColor": "teal",
-    "description": "Réalisation d'une campagne de communication pour valoriser l'attractivité d'une commune en France, création universitaire.",
+    "description": "À l'occasion de la JPO 2026 le département MMI communique sur lui-même, pour promouvoir la formation et attirer de nouvelles cohortes d'étudiants à venir.",
     "layout": "wide",
     "mediaType": "image",
-    "mediaSrc": "img/fcb.png",
-    "descriptionpage": "Le but du projet était de créer une campagne complète (web et papier) pour rendre une ville plus attractive grâce à un événement. Avec mon groupe, on a choisi la ville de Ballancourt-sur-Essonne et on a décidé de miser sur son club de football. On a commencé par moderniser l'image du club en créant un tout nouveau logo. Ensuite, on a décliné cette identité sur plusieurs supports : une page d'accueil de site web adaptée aux mobiles, des bannières publicitaires pour internet et des affiches pour la ville. On a du rendre un dossier contenant toutes nos créations.",
-    "année": "Novembre 2025",
+    "mediaSrc": "img/Couverture.jpg",
+    "descriptionpage": "Le but du projet était de créer une campagne de communication pour promouvoir la formation MMI de Champs-sur-Marne à l’occasion de la Journée Portes Ouvertes 2026. L’objectif était d’attirer de futurs bacheliers en donnant une image moderne et attractive de la formation. Pour cela, j’ai commencé par concevoir une nouvelle identité visuelle avec la création d’un logo pour MMI Champs-sur-Marne. Ensuite, cette identité a été déclinée sur différents supports de communication, notamment une affiche promotionnelle et plusieurs produits dérivés (goodies). Enfin, toutes les créations ont été regroupées dans un dossier de présentation contenant également un moodboard, des mock-ups, les déclinaisons des supports et une mini charte graphique.",
+    "année": "Février 2026",
     "technologies": "Figma, Photoshop, Illustrator",
-    "lien": "Campagne_Institutionnelle_Mathieu_Clement_Lyam.pdf",
+    "lien": "Dossier-JPO-Lucie-Madhvi-Mathieu.pdf",
     "typedeprojet": "Projet universitaire",
     "realisationduprojet":"Groupe (3)",
     "role": "Designer graphique",
-    "duree": "2 mois",
-    "images1": "img/campagne2.jpg",
-    "images2": "img/campagne3.jpg",
-    "images3": "img/campagne4.jpg",
-    "images4": "img/campagne5.jpg",
-    "images5": "img/Campagne.jpg"
+    "duree": "1 mois",
+    "images1": "img/affiche.jpg",
+    "images2": "img/camp1.jpg",
+    "images3": "img/camp2.jpg",
+    "images4": "img/campa3.jpg",
+    "images5": "img/camp4.jpg"
   },
   {
     "id": 6,
@@ -194,6 +194,7 @@
     "images7": "img/niketn.jpg"
   }
 ]
+
 
 
 
