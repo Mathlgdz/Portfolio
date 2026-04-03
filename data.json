@@ -183,29 +183,8 @@
     "images17": "img/Post6.jpg",
     "images18": "img/Post6bis.jpg"
   },
-  {
+      {
     "id": 8,
-    "title": "Social Media Bayer Leverkusen",
-    "category": "Graphisme",
-    "tagColor": "teal",
-    "description": "Réalisation d'un rebranding media des jours de match",
-    "layout": "wide",
-    "mediaType": "image",
-    "mediaSrc": "img/byl.jpg",
-    "descriptionpage": "Dans le cadre d’un projet personnel, j’ai élaboré un kit graphique Matchday complet pour le Bayer 04 Leverkusen. L’objectif était de simuler une situation réelle de Community Management en concevant des visuels prêts à l'emploi pour les réseaux sociaux.",
-    "année": "Février 2026",
-    "technologies": "Photoshop, Illustrator",
-    "lien": "",
-    "typedeprojet": "Projet personnel",
-    "realisationduprojet":"Seul",
-    "role": "Graphiste",
-    "duree": "En cours",
-    "images1": "img/bayerlever.jpg",
-    "images2": "img/bayerlever2.jpg",
-    "images3": "img/bayerlever3.jpg"
-  },
-    {
-    "id": 9,
     "title": "Affiches",
     "category": "Design",
     "tagColor": "teal",
@@ -229,6 +208,27 @@
     "images6": "img/stvalentin.jpg",
     "images7": "img/niketn.jpg",
     "images8": "img/leclerc2.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Social Media Bayer Leverkusen",
+    "category": "Graphisme",
+    "tagColor": "teal",
+    "description": "Réalisation d'un rebranding media des jours de match",
+    "layout": "wide",
+    "mediaType": "image",
+    "mediaSrc": "img/byl.jpg",
+    "descriptionpage": "Dans le cadre d’un projet personnel, j’ai élaboré un kit graphique Matchday complet pour le Bayer 04 Leverkusen. L’objectif était de simuler une situation réelle de Community Management en concevant des visuels prêts à l'emploi pour les réseaux sociaux.",
+    "année": "Février 2026",
+    "technologies": "Photoshop, Illustrator",
+    "lien": "",
+    "typedeprojet": "Projet personnel",
+    "realisationduprojet":"Seul",
+    "role": "Graphiste",
+    "duree": "En cours",
+    "images1": "img/bayerlever.jpg",
+    "images2": "img/bayerlever2.jpg",
+    "images3": "img/bayerlever3.jpg"
   }
 ]
 
