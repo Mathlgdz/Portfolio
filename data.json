@@ -149,6 +149,42 @@
   },
     {
     "id": 7,
+    "title": "L'éveil de la machine",
+    "category": "Graphisme",
+    "tagColor": "teal",
+    "description": "Réalisation de l'identité d'une exposition immersive (fictive)",
+    "layout": "normal",
+    "mediaType": "image",
+    "mediaSrc": "img/eveil.jpg",
+    "descriptionpage": "Dans le cadre d’un projet personnel, j’ai élaboré un kit graphique Matchday complet pour le Bayer 04 Leverkusen. L’objectif était de simuler une situation réelle de Community Management en concevant des visuels prêts à l'emploi pour les réseaux sociaux.",
+    "année": "Janvier 2026 - Avril 2026",
+    "technologies": "Photoshop, Figma, Illustrator",
+    "lien": "img/Eveildelamachine-CharteGraphique.pdf",
+    "typedeprojet": "Projet univeristaire",
+    "realisationduprojet":"Groupe (7)",
+    "role": "Graphiste",
+    "duree": "Terminé",
+    "images1": "img/affiche.jpg",
+    "images2": "img/Post1.jpg",
+    "images3": "img/Post2.jpg",
+    "images4": "img/Post2bis.jpg",
+    "images5": "img/Post2bis-1.jpg",
+    "images6": "img/Post2bis-2.jpg",
+    "images7": "img/Post3.jpg",
+    "images8": "img/Post3bis.jpg",
+    "images9": "img/Post3bis-1.jpg",
+    "images10": "img/Post3bis-2.jpg",
+    "images11": "img/Post4.jpg",
+    "images12": "img/Post4bis.jpg",
+    "images13": "img/Post4bis-1.jpg",
+    "images14": "img/Post5.jpg",
+    "images15": "img/Post5bis.jpg",
+    "images16": "img/Post5bis-1.jpg",
+    "images17": "img/Post6.jpg",
+    "images18": "img/Post6bis.jpg"
+  },
+  {
+    "id": 8,
     "title": "Social Media Bayer Leverkusen",
     "category": "Graphisme",
     "tagColor": "teal",
@@ -169,12 +205,12 @@
     "images3": "img/bayerlever3.jpg"
   },
     {
-    "id": 8,
+    "id": 9,
     "title": "Affiches",
     "category": "Design",
     "tagColor": "teal",
     "description": "Création d'affiches, création personnelle.",
-    "layout": "wide",
+    "layout": "normal",
     "mediaType": "image",
     "mediaSrc": "img/Affiche.jpg",
     "descriptionpage": "Passionné par la création visuelle, je consacre mon temps libre à développer mes compétences en design graphique. Je conçois régulièrement des affiches et des supports de communication variés, explorant différents univers pour expérimenter de nouvelles techniques. Dans une démarche d'amélioration continue, j'analyse systématiquement mes projets précédents afin d'identifier mes axes de progrès, m'efforçant ainsi de proposer, à chaque réalisation, un design plus abouti et professionnel.",
@@ -191,7 +227,8 @@
     "images4": "img/affichejd.jpg",
     "images5": "img/leclerc.jpg",
     "images6": "img/stvalentin.jpg",
-    "images7": "img/niketn.jpg"
+    "images7": "img/niketn.jpg",
+    "images8": "img/leclerc2.jpg"
   }
 ]
 
