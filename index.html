@@ -4,16 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- Le contenu du site se modifie dans le fichier contenu.js -->
-<title>Portfolio</title>
-<meta name="description" content="">
-<meta property="og:title" content="Portfolio">
-<meta property="og:description" content="">
+<title>MATHIEU LEGEDZA® — Portfolio</title>
+<meta name="description" content="Mathieu Legedza — UX/UI &amp; Product Designer à Paris. Portfolio : design d’interfaces, design graphique et web.">
+<link rel="canonical" href="https://mathlgdz.github.io/Portfolio/">
+<meta property="og:title" content="Mathieu Legedza — Portfolio">
+<meta property="og:description" content="Mathieu Legedza — UX/UI &amp; Product Designer à Paris. Portfolio : design d’interfaces, design graphique et web.">
+<meta property="og:url" content="https://mathlgdz.github.io/Portfolio/">
+<meta property="og:site_name" content="Mathieu Legedza">
+<meta property="og:locale" content="fr_FR">
 <meta property="og:type" content="website">
-<meta property="og:image" content="images/apercu.jpg">
+<meta property="og:image" content="https://mathlgdz.github.io/Portfolio/images/apercu.jpg">
+<meta property="og:image:alt" content="Mathieu Legedza — UX/UI &amp; Product Designer">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="images/apercu.jpg">
+<meta name="twitter:image" content="https://mathlgdz.github.io/Portfolio/images/apercu.jpg">
 <link rel="icon" type="image/svg+xml" id="favicon" href="images/favicon-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700;800&family=JetBrains+Mono:wght@400&display=swap">
@@ -233,6 +238,27 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(24px + env(safe-area
 .pm-next{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);margin-top:clamp(80px,10vw,160px);padding:clamp(40px,6vw,80px) var(--gut) calc(clamp(40px,6vw,80px) + env(safe-area-inset-bottom,0px));cursor:pointer}
 .pm-nt{display:block;margin-top:12px;max-width:100%;overflow-wrap:break-word;line-height:1.05;font-size:clamp(36px,7vw,110px);font-weight:800;letter-spacing:-.04em;text-transform:uppercase}
 @media(max-width:860px){.pm-meta{grid-template-columns:1fr 1fr}.pm-txt,.pm-gal{grid-template-columns:1fr}}
+/* Images des fiches : cliquables pour les agrandir */
+.pm .ph.has{cursor:zoom-in}
+.pm .ph.has img{transition:transform .9s var(--ease)}
+.pm .ph.has:hover img{transform:scale(1.03)}
+.pm .ph.has::after{content:"";position:absolute;top:14px;right:14px;z-index:3;width:40px;height:40px;border-radius:50%;
+  background:rgba(16,17,16,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F1EFE8' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7'/%3E%3C/svg%3E") center/16px no-repeat;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transform:scale(.8);transition:opacity .35s,transform .35s var(--ease)}
+.pm .ph.has:hover::after,.pm .ph.has:focus-visible::after{opacity:1;transform:none}
+@media(hover:none){.pm .ph.has::after{opacity:.9;transform:none}}
+
+/* Visionneuse plein écran */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,11,10,.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s;touch-action:pan-y}
+.lb.open{opacity:1;visibility:visible;transition:opacity .4s}
+#lbImg{max-width:min(92vw,1600px);max-height:80vh;width:auto;height:auto;object-fit:contain;transform:scale(.95);transition:transform .6s var(--ease),opacity .3s}
+.lb.open #lbImg{transform:none}
+.lb .pill{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:var(--gut);color:#F1EFE8;border-color:rgba(241,239,232,.25)}
+.lb-nav{position:absolute;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:1px solid rgba(241,239,232,.25);background:rgba(16,17,16,.45);color:#F1EFE8;cursor:pointer;font-size:18px;transition:background .3s,border-color .3s}
+.lb-nav:hover{background:rgba(241,239,232,.12);border-color:rgba(241,239,232,.5)}
+.lb-prev{left:var(--gut)}.lb-next{right:var(--gut)}
+.lb-n{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);color:rgba(241,239,232,.7)}
+@media(max-width:860px){.lb-nav{top:auto;bottom:calc(10px + env(safe-area-inset-bottom,0px));margin:0;width:46px;height:46px}#lbImg{max-height:72vh}}
 
 /* ---------- Fond topographique + grain ---------- */
 #topo{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity 1.6s}
@@ -367,6 +393,14 @@ html.loading,html.loading body{overflow:hidden}
 <div class="pm" id="pm" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="pmT" aria-hidden="true">
   <div class="pm-bar"><span class="mono" id="pmN"></span><button class="pill rt" id="pmX"><span data-t="m_close" data-roll></span>&nbsp;✕</button></div>
   <div id="pmBody"></div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-hidden="true" data-lenis-prevent>
+  <img id="lbImg" alt="">
+  <button class="pill rt" id="lbX"><span data-t="m_close" data-roll></span>&nbsp;✕</button>
+  <button class="lb-nav lb-prev" id="lbPrev">←</button>
+  <button class="lb-nav lb-next" id="lbNext">→</button>
+  <span class="mono lb-n" id="lbN"></span>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -539,6 +573,7 @@ function openProject(i){
   </div>
   ${n>1?`<button class="pm-next rt" id="pmNext"><span class="mono">${esc(D.m_next)}</span><span class="pm-nt" data-roll>${esc(tx(nx.titre))}</span></button>`:''}`;
   $$('#pmBody [data-roll]').forEach(roll);
+  $$('#pmBody .ph').forEach(ph=>{if(ph.querySelector('img')){ph.tabIndex=0;ph.setAttribute('role','button');ph.setAttribute('aria-label',(lang==='fr'?'Agrandir l’image — ':'Enlarge image — ')+title)}});
   const nb=$('#pmNext');if(nb)nb.onclick=()=>openProject((i+1)%n);
   pm.scrollTop=0;
   if(!was){lastF=document.activeElement;pm.classList.add('open');pm.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';if(lenis)lenis.stop();setTimeout(()=>$('#pmX').focus({preventScroll:true}),60);}
@@ -550,7 +585,36 @@ function openProject(i){
 function closeProject(){if(curP<0)return;curP=-1;pm.classList.remove('open');pm.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lenis)lenis.start();if(lastF)lastF.focus({preventScroll:true});}
 $('#works').addEventListener('click',e=>{const a=e.target.closest('[data-p]');if(!a)return;e.preventDefault();openProject(+a.dataset.p)});
 $('#pmX').onclick=closeProject;
-addEventListener('keydown',e=>{if(e.key==='Escape'){closeProject();if(links.classList.contains('open'))menu(false)}});
+/* ---------- Visionneuse : clic sur une image d'une fiche projet ---------- */
+const lb=$('#lb'),lbImg=$('#lbImg');let lbList=[],lbI=0,lbLast=null;
+const lbIsOpen=()=>lb.classList.contains('open');
+function lbShow(i){
+  lbI=(i+lbList.length)%lbList.length;const im=lbList[lbI],src=im.currentSrc||im.src;
+  lbImg.style.opacity=0;const pre=new Image();pre.onload=()=>{lbImg.src=src;lbImg.alt=im.alt;lbImg.style.opacity=1};pre.src=src;
+  $('#lbN').textContent=pad(lbI)+' / '+String(lbList.length).padStart(2,'0');
+  $('#lbPrev').hidden=$('#lbNext').hidden=lbList.length<2;
+}
+function lbOpen(list,i){
+  lbList=list;lbLast=document.activeElement;
+  $('#lbPrev').setAttribute('aria-label',lang==='fr'?'Image précédente':'Previous image');
+  $('#lbNext').setAttribute('aria-label',lang==='fr'?'Image suivante':'Next image');
+  lb.setAttribute('aria-label',lang==='fr'?'Image agrandie':'Enlarged image');
+  lb.classList.add('open');lb.setAttribute('aria-hidden','false');lbShow(i);
+  setTimeout(()=>$('#lbX').focus({preventScroll:true}),60);
+}
+function lbClose(){if(!lbIsOpen())return;lb.classList.remove('open');lb.setAttribute('aria-hidden','true');if(lbLast)lbLast.focus({preventScroll:true})}
+function lbFrom(ph){const list=$$('#pmBody .ph.has');const i=list.indexOf(ph);if(i>-1)lbOpen(list.map(p=>p.querySelector('img')),i)}
+$('#pmBody').addEventListener('click',e=>{const ph=e.target.closest('.ph.has');if(ph)lbFrom(ph)});
+$('#pmBody').addEventListener('keydown',e=>{const ph=e.target.closest('.ph.has');if(ph&&(e.key==='Enter'||e.key===' ')){e.preventDefault();lbFrom(ph)}});
+$('#lbX').onclick=lbClose;$('#lbPrev').onclick=()=>lbShow(lbI-1);$('#lbNext').onclick=()=>lbShow(lbI+1);
+lb.addEventListener('click',e=>{if(e.target===lb)lbClose()});
+let tx0=null;lb.addEventListener('touchstart',e=>{tx0=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{if(tx0==null)return;const dx=e.changedTouches[0].clientX-tx0;tx0=null;if(Math.abs(dx)>50&&lbList.length>1)lbShow(lbI+(dx<0?1:-1))});
+
+addEventListener('keydown',e=>{
+  if(lbIsOpen()){if(e.key==='Escape')lbClose();else if(e.key==='ArrowRight')lbShow(lbI+1);else if(e.key==='ArrowLeft')lbShow(lbI-1);return;}
+  if(e.key==='Escape'){closeProject();if(links.classList.contains('open'))menu(false)}
+});
 
 /* ---------- Animations au scroll ---------- */
 let mm=null,lenis=null;
