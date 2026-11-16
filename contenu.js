@@ -236,7 +236,7 @@ const TEXTES = {
     top: "Retour en haut", rights: "Tous droits réservés", img: "Image du projet",
     m_cat: "Catégorie", m_year: "Année", m_role: "Rôle", m_tools: "Outils",
     m_motion: "Motion design", m_ai: "Réalisé par IA", m_play: "Lire le motion", m_tool: "Outil",
-    m_ai_note: "Ce motion design a été généré à l’aide de l’intelligence artificielle.",
+    m_ai_note: "Ce motion design a été réalisé à l’aide de l’intelligence artificielle. Toutefois, les maquettes et les sites web présentés dans la vidéo ont été conçus et réalisés par mes soins lorsqu’il s’agit de projets individuels, ou par notre équipe dans le cadre de projets de groupe.",
     m_about: "Le projet", m_visit: "Voir le projet", m_next: "Projet suivant", m_close: "Fermer",
   },
   en: {
@@ -253,7 +253,7 @@ const TEXTES = {
     top: "Back to top", rights: "All rights reserved", img: "Project image",
     m_cat: "Category", m_year: "Year", m_role: "Role", m_tools: "Tools",
     m_motion: "Motion design", m_ai: "AI-generated", m_play: "Play the motion", m_tool: "Tool",
-    m_ai_note: "This motion design was generated using artificial intelligence.",
+    m_ai_note: "This motion design video was created using artificial intelligence. However, the mockups and websites featured in the video were designed and developed by me for individual projects, or by our team for group projects.",
     m_about: "About the project", m_visit: "View the project", m_next: "Next project", m_close: "Close",
   },
 };
