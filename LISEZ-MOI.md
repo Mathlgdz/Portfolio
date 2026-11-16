@@ -33,6 +33,12 @@ Exemple pour changer votre titre :
 titre: { fr: "UX/UI & Product Designer à en devenir.", en: "Aspiring UX/UI & Product Designer." },
 ```
 
+## Les trois langues (français, anglais, polonais)
+
+Le site existe en **français**, **anglais** et **polonais**. Le visiteur choisit avec les drapeaux en haut à droite (dans le menu sur téléphone) ; à la première visite, la langue de son navigateur est utilisée.
+Dans **contenu.js**, chaque texte a trois versions : `fr: "…"`, `en: "…"` et `pl: "…"`. Si vous ajoutez un texte sans version `pl`, le site affiche l'anglais à la place pour les visiteurs polonais.
+Les drapeaux sont dans `images/flags/` (fr.svg, en.svg, pl.svg).
+
 ## Changer ou ajouter une image
 
 1. Déposez votre photo dans le bon dossier, par exemple `images/hero.jpg`.
