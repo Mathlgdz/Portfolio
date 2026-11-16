@@ -1,0 +1,5 @@
+Ce dossier contient la version lisible du code du site (index.source.html).
+- Il est visible sur GitHub, mais il n'est PAS publié sur le site en ligne :
+  GitHub Pages ignore automatiquement les dossiers dont le nom commence par « _ ».
+- Ne le supprimez pas : Claude s'en sert pour faire évoluer le site.
+- N'ajoutez jamais de fichier nommé « .nojekyll » dans le dépôt, sinon ce dossier deviendrait public.

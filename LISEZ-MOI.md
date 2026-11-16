@@ -89,6 +89,12 @@ Les visites ne sont comptées qu'une fois le site en ligne (pas quand vous l'ouv
 Quand le lien du site est partagé (LinkedIn, WhatsApp, Messenger…), l'image `images/apercu.jpg` s'affiche (1200 × 630 px). Pour la changer, remplacez ce fichier par une image de même format et du même nom.
 Note : LinkedIn préfère une adresse complète. Une fois le site en ligne, dans **index.html**, remplacez les deux `content="images/apercu.jpg"` par l'adresse complète, par exemple `content="https://votre-site.netlify.app/images/apercu.jpg"`. Pour vérifier le résultat : **linkedin.com/post-inspector**.
 
+## Protection des images, vidéos et du code
+
+Le site décourage la copie : pas de clic droit ni de glisser-déposer sur les images et vidéos, pas de bouton de téléchargement sur les vidéos, raccourcis d'enregistrement et d'inspection bloqués, et le code de **index.html** est compressé (illisible).
+Ces protections sont **dissuasives** : une personne déterminée peut toujours récupérer ce qui s'affiche dans son navigateur.
+**index.html** n'est plus modifiable à la main : pour faire évoluer le site, envoyez le dossier complet à Claude. La version lisible du code est rangée dans le dossier **_source**, qui reste sur GitHub mais n'est pas publié sur le site (GitHub Pages ignore les dossiers commençant par « _ »). **contenu.js** reste modifiable comme avant.
+
 ## Si la page devient vide
 
 Un message s'affiche si **contenu.js** contient une erreur. C'est presque toujours :
