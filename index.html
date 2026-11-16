@@ -248,6 +248,24 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(24px + env(safe-area
 .pm .ph.has:hover::after,.pm .ph.has:focus-visible::after{opacity:1;transform:none}
 @media(hover:none){.pm .ph.has::after{opacity:.9;transform:none}}
 
+/* Motion design dans les fiches */
+.pm-motion{display:grid;grid-template-columns:minmax(110px,max-content) 1fr;gap:clamp(20px,3vw,48px);margin-top:clamp(48px,6vw,96px)}
+.pm-motion>.mono{padding-top:.5em}
+.mv{position:relative;background:#000;overflow:hidden}
+.mv video{display:block;width:100%;height:auto;max-height:80vh;background:#000}
+.mv iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.mv .ph{aspect-ratio:16/9}
+.vp-play{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(10,11,10,.38);border:0;color:#F1EFE8;cursor:pointer;font-family:var(--m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:opacity .4s}
+.vp-ic{width:76px;height:76px;border-radius:50%;border:1px solid rgba(241,239,232,.55);display:grid;place-items:center;transition:transform .6s var(--ease),background .3s}
+.vp-ic svg{width:20px;height:20px;margin-left:3px}
+.vp-play:hover .vp-ic{transform:scale(1.08);background:rgba(241,239,232,.12)}
+.vp-play.gone{opacity:0;pointer-events:none}
+.ai-badge{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:99px;background:rgba(16,17,16,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#F1EFE8;font-family:var(--m);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(166,155,118,.55);pointer-events:none}
+.ai-badge i{color:#A69B76;font-style:normal}
+.ai-note{display:flex;gap:8px;align-items:baseline;margin-top:14px;text-transform:none;letter-spacing:.02em;font-size:12px}
+.ai-note i{color:var(--accent);font-style:normal}
+@media(max-width:860px){.pm-motion{grid-template-columns:1fr}}
+
 /* Visionneuse plein écran */
 .lb{position:fixed;inset:0;z-index:90;background:rgba(10,11,10,.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility 0s .4s;touch-action:pan-y}
 .lb.open{opacity:1;visibility:visible;transition:opacity .4s}
@@ -419,6 +437,10 @@ if(typeof SITE==='undefined'||typeof TEXTES==='undefined'){
   throw new Error('contenu.js');
 }
 const T=TEXTES;
+/* Textes par défaut des nouveautés (si contenu.js ne les contient pas encore) */
+const DEF={fr:{m_motion:"Motion design",m_ai:"Réalisé par IA",m_ai_note:"Ce motion design a été généré à l’aide de l’intelligence artificielle.",m_play:"Lire le motion",m_tool:"Outil"},
+           en:{m_motion:"Motion design",m_ai:"AI-generated",m_ai_note:"This motion design was generated using artificial intelligence.",m_play:"Play the motion",m_tool:"Tool"}};
+for(const l of ['fr','en'])T[l]=Object.assign({},DEF[l],T[l]);
 const $=s=>document.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const root=document.documentElement;
 let lang=root.getAttribute('lang')==='fr'?'fr':'en';
@@ -556,6 +578,23 @@ $('#top-btn').onclick=()=>lenis?lenis.scrollTo(0,{duration:1.6}):scrollTo({top:0
 
 /* ---------- Fiche projet ---------- */
 const pm=$('#pm');let curP=-1,lastF=null;
+/* Motion design : vidéo du dossier « videos » ou lien YouTube / Vimeo */
+function motionBlock(p,D,title){
+  const src=String(tx(p.motion)||'').trim();if(!src)return'';
+  const ia=p.motion_ia!==false,tool=tx(p.motion_outil);
+  const yt=src.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/),vm=src.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  const play=`<button class="vp-play rt" type="button"><span class="vp-ic"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M5 3l12 7-12 7z"/></svg></span><span data-roll>${esc(D.m_play)}</span></button>`;
+  let player;
+  if(yt)player=`<iframe src="https://www.youtube-nocookie.com/embed/${yt[1]}?rel=0&modestbranding=1&playsinline=1" title="${esc(D.m_motion+' — '+title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>`;
+  else if(vm)player=`<iframe src="https://player.vimeo.com/video/${vm[1]}?dnt=1&title=0&byline=0&portrait=0" title="${esc(D.m_motion+' — '+title)}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  else player=`<video src="${esc(src)}" playsinline preload="metadata" data-path="${esc(src)}" aria-label="${esc(D.m_motion+' — '+title)}"${p.motion_apercu?` poster="${esc(p.motion_apercu)}"`:''}></video>${play}`;
+  return `<div class="pm-motion"><span class="mono">${esc(D.m_motion)}</span><div>
+    <div class="mv">${player}${ia?`<span class="ai-badge"><i>✦</i>${esc(D.m_ai)}</span>`:''}</div>
+    ${ia?`<p class="mono ai-note"><i>✦</i><span>${esc(D.m_ai_note)}${tool?` ${esc(D.m_tool)}${lang==='fr'?' : ':': '}${esc(tool)}.`:''}</span></p>`:''}
+  </div></div>`;
+}
+function stopMotion(){$$('#pmBody video').forEach(v=>v.pause());$$('#pmBody .mv iframe').forEach(f=>{const s=f.src;f.src='about:blank';f.src=s})}
+
 function openProject(i){
   const D=T[lang],L=SITE.projets,n=L.length,p=L[i],was=curP>=0;curP=i;
   const title=tx(p.titre);
@@ -569,10 +608,17 @@ function openProject(i){
     <div class="pm-meta">${meta.map(([k,v])=>`<div><span class="mono">${esc(k)}</span><span>${esc(v)}</span></div>`).join('')}</div>
     ${pic(p.image,p.image?pathLabel(p.image):D.img,title,'pm-cover')}
     <div class="pm-txt"><span class="mono">${esc(D.m_about)}</span><div>${txt}${p.lien?`<a class="btn rt" href="${esc(p.lien)}" target="_blank" rel="noopener"><span data-roll>${esc(D.m_visit)}</span><span class="ar">→</span></a>`:''}</div></div>
+    ${motionBlock(p,D,title)}
     <div class="pm-gal">${gal.map(s=>pic(s,s?pathLabel(s):D.img,title)).join('')}</div>
   </div>
   ${n>1?`<button class="pm-next rt" id="pmNext"><span class="mono">${esc(D.m_next)}</span><span class="pm-nt" data-roll>${esc(tx(nx.titre))}</span></button>`:''}`;
   $$('#pmBody [data-roll]').forEach(roll);
+  $$('#pmBody .mv video').forEach(v=>{
+    const btn=v.parentNode.querySelector('.vp-play');
+    btn.onclick=()=>{v.controls=true;btn.classList.add('gone');v.play().catch(()=>{})};
+    v.addEventListener('ended',()=>{v.controls=false;btn.classList.remove('gone')});
+    v.addEventListener('error',()=>{const b=v.closest('.pm-motion');if(b)b.remove()}); // vidéo introuvable : la partie est masquée
+  });
   $$('#pmBody .ph').forEach(ph=>{if(ph.querySelector('img')){ph.tabIndex=0;ph.setAttribute('role','button');ph.setAttribute('aria-label',(lang==='fr'?'Agrandir l’image — ':'Enlarge image — ')+title)}});
   const nb=$('#pmNext');if(nb)nb.onclick=()=>openProject((i+1)%n);
   pm.scrollTop=0;
@@ -582,7 +628,7 @@ function openProject(i){
     gsap.from('#pmBody .pm-meta, #pmBody .pm-cover, #pmBody .pm-txt',{opacity:0,y:40,duration:1,stagger:.1,ease:'power3.out',delay:was?.1:.5});
   }
 }
-function closeProject(){if(curP<0)return;curP=-1;pm.classList.remove('open');pm.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lenis)lenis.start();if(lastF)lastF.focus({preventScroll:true});}
+function closeProject(){if(curP<0)return;stopMotion();curP=-1;pm.classList.remove('open');pm.setAttribute('aria-hidden','true');document.body.style.overflow='';if(lenis)lenis.start();if(lastF)lastF.focus({preventScroll:true});}
 $('#works').addEventListener('click',e=>{const a=e.target.closest('[data-p]');if(!a)return;e.preventDefault();openProject(+a.dataset.p)});
 $('#pmX').onclick=closeProject;
 /* ---------- Visionneuse : clic sur une image d'une fiche projet ---------- */
@@ -595,6 +641,7 @@ function lbShow(i){
   $('#lbPrev').hidden=$('#lbNext').hidden=lbList.length<2;
 }
 function lbOpen(list,i){
+  $$('#pmBody video').forEach(v=>v.pause());
   lbList=list;lbLast=document.activeElement;
   $('#lbPrev').setAttribute('aria-label',lang==='fr'?'Image précédente':'Previous image');
   $('#lbNext').setAttribute('aria-label',lang==='fr'?'Image suivante':'Next image');

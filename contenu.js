@@ -87,6 +87,7 @@ const SITE = {
      - details = texte de la fiche qui s'ouvre au clic. Le symbole | crée un nouveau paragraphe.
      - lien    = adresse du projet en ligne (Figma, Behance, site…). Laissez "" s'il n'y en a pas.
      - image   = image principale ; galerie = autres images affichées dans la fiche
+     - motion  = vidéo de motion design affichée dans la fiche. Si le fichier n'existe pas, la partie est simplement masquée.
      ------------------------------------------------------------------------ */
   projets: [
 
@@ -104,6 +105,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-01/001.jpg",
       galerie: [ "images/projets/projet-01/0012.jpg", "images/projets/projet-01/0013.jpg" ],
+      motion:       "videos/projet-01.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion_ia:    true,                     // true = mention « Réalisé par IA »
+      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
     { // ---------- PROJET 02 ----------
@@ -120,6 +124,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-02/002.jpg",
       galerie: [ "images/projets/projet-02/0022.jpg", "images/projets/projet-02/0023.jpg" ],
+      motion:       "videos/projet-02.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion_ia:    true,                     // true = mention « Réalisé par IA »
+      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
     { // ---------- PROJET 03 ----------
@@ -136,6 +143,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-03/003.jpg",
       galerie: [ "images/projets/projet-03/0032.jpg", "images/projets/projet-03/0033.jpg" ],
+      motion:       "videos/projet-03.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion_ia:    true,                     // true = mention « Réalisé par IA »
+      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
     { // ---------- PROJET 04 ----------
@@ -152,6 +162,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-04/004.jpg",
       galerie: [ "images/projets/projet-04/0042.jpg", "images/projets/projet-04/0043.jpg" ],
+      motion:       "videos/projet-04.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion_ia:    true,                     // true = mention « Réalisé par IA »
+      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
   ],
@@ -221,6 +234,8 @@ const TEXTES = {
     cv: "Télécharger mon CV", cv_wip: "CV en cours de modification",
     top: "Retour en haut", rights: "Tous droits réservés", img: "Image du projet",
     m_cat: "Catégorie", m_year: "Année", m_role: "Rôle", m_tools: "Outils",
+    m_motion: "Motion design", m_ai: "Réalisé par IA", m_play: "Lire le motion", m_tool: "Outil",
+    m_ai_note: "Ce motion design a été généré à l’aide de l’intelligence artificielle.",
     m_about: "Le projet", m_visit: "Voir le projet", m_next: "Projet suivant", m_close: "Fermer",
   },
   en: {
@@ -236,6 +251,8 @@ const TEXTES = {
     cv: "Download my resume", cv_wip: "Resume being updated",
     top: "Back to top", rights: "All rights reserved", img: "Project image",
     m_cat: "Category", m_year: "Year", m_role: "Role", m_tools: "Tools",
+    m_motion: "Motion design", m_ai: "AI-generated", m_play: "Play the motion", m_tool: "Tool",
+    m_ai_note: "This motion design was generated using artificial intelligence.",
     m_about: "About the project", m_visit: "View the project", m_next: "Next project", m_close: "Close",
   },
 };
