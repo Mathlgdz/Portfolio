@@ -163,9 +163,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-04/004.jpg",
       galerie: [ "images/projets/projet-04/0042.jpg", "images/projets/projet-04/0043.jpg" ],
-      motion:       "Video/projet-04.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion:       "Video/HealthNutriWay_motion_v2.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
       motion_ia:    true,                     // true = mention « Réalisé par IA »
-      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
+      motion_outil: "Claude",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
   ],
