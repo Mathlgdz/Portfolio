@@ -105,7 +105,7 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-01/001.jpg",
       galerie: [ "images/projets/projet-01/0012.jpg", "images/projets/projet-01/0013.jpg" ],
-      motion:       "videos/projet-01.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion:       "Video/projet-01.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
       motion_ia:    true,                     // true = mention « Réalisé par IA »
       motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
@@ -124,7 +124,7 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-02/002.jpg",
       galerie: [ "images/projets/projet-02/0022.jpg", "images/projets/projet-02/0023.jpg" ],
-      motion:       "videos/projet-02.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion:       "Video/projet-02.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
       motion_ia:    true,                     // true = mention « Réalisé par IA »
       motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
@@ -143,9 +143,9 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-03/003.jpg",
       galerie: [ "images/projets/projet-03/0032.jpg", "images/projets/projet-03/0033.jpg" ],
-      motion:       "videos/projet-03.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion:       "Video/Wayly_motion_v7.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
       motion_ia:    true,                     // true = mention « Réalisé par IA »
-      motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
+      motion_outil: "Claude",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
     { // ---------- PROJET 04 ----------
@@ -162,7 +162,7 @@ const SITE = {
       lien:    "",
       image:   "images/projets/projet-04/004.jpg",
       galerie: [ "images/projets/projet-04/0042.jpg", "images/projets/projet-04/0043.jpg" ],
-      motion:       "videos/projet-04.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
+      motion:       "Video/projet-04.mp4",   // motion design (dossier « videos ») ou lien YouTube / Vimeo. "" = pas de motion
       motion_ia:    true,                     // true = mention « Réalisé par IA »
       motion_outil: "",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
