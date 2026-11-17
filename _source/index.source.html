@@ -151,7 +151,7 @@ h2{font-size:clamp(40px,8vw,120px)}
 /* ---------- WORKS ---------- */
 .works{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(24px,3vw,48px)}
 .w{display:block;position:relative}
-.w:nth-child(4n+1){grid-column:1/9}.w:nth-child(4n+2){grid-column:9/13;margin-top:20vw}.w:nth-child(4n+3){grid-column:3/8}.w:nth-child(4n+4){grid-column:8/13;margin-top:8vw}
+.w:nth-child(4n+1){grid-column:1/9}.w:nth-child(4n+1):last-child{grid-column:3/11}.w:nth-child(4n+2){grid-column:9/13;margin-top:20vw}.w:nth-child(4n+3){grid-column:3/8}.w:nth-child(4n+4){grid-column:8/13;margin-top:8vw}
 .w .box{overflow:hidden;position:relative}
 .w .ph{aspect-ratio:4/3;transition:transform 1s var(--ease)}
 .w:nth-child(4n+2) .ph,.w:nth-child(4n+4) .ph{aspect-ratio:3/4}
@@ -340,10 +340,7 @@ img,video,canvas{-webkit-user-drag:none;user-select:none;-webkit-user-select:non
 html.loading,html.loading body{overflow:hidden}
 
 /* ---------- Bascule de thème en cercle ---------- */
-::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
-::view-transition-new(root){z-index:2}
-html.vt-circle::view-transition-new(root){animation:vtCircle .9s cubic-bezier(.7,0,.2,1) both}
-@keyframes vtCircle{from{clip-path:circle(0px at var(--vx) var(--vy))}to{clip-path:circle(var(--vr) at var(--vx) var(--vy))}}
+.theme-wipe{position:fixed;top:0;left:0;width:100vw;height:100vh;margin:0;z-index:300;pointer-events:none;will-change:clip-path}
 
 /* ---------- Projets : inclinaison 3D au survol ---------- */
 .w .box{transform-style:preserve-3d;will-change:transform}
@@ -607,18 +604,24 @@ function setTheme(p,instant){
   clearTimeout(setTheme.t); setTheme.t=setTimeout(()=>root.classList.remove('tt'),500);
 }
 /* Le nouveau thème s'ouvre en cercle depuis le bouton (navigateurs compatibles) */
-function themeSwap(p,btn){
-  if(!document.startViewTransition||reduce){setTheme(p);return;}
-  // le cercle part toujours de l'icône soleil / lune
-  const ic=$('#theme'),r=(ic.offsetParent?ic:btn).getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;
-  const R=Math.ceil(Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y)));
-  root.style.setProperty('--vx',x+'px');root.style.setProperty('--vy',y+'px');root.style.setProperty('--vr',R+'px');
-  root.classList.add('vt-circle');
-  const vt=document.startViewTransition(()=>setTheme(p,true));
-  vt.finished.finally(()=>root.classList.remove('vt-circle'));
+function themeSwap(p,btn,ev){
+  // Un cercle de la couleur du nouveau thème grandit depuis l'icône soleil / lune,
+  // le thème change une fois l'écran couvert, puis le cercle s'efface. Même rendu sur tous les navigateurs.
+  const t=p==='system'?(mq.matches?'light':'dark'):p;
+  if(reduce||t===root.getAttribute('data-theme')||!document.body.animate){setTheme(p);return;}
+  // origine = le point exact du clic (ou le centre du bouton si on utilise le clavier)
+  let x,y;
+  if(ev&&ev.clientX>0&&ev.clientY>0){x=ev.clientX;y=ev.clientY}
+  else{const r=btn.getBoundingClientRect();x=r.left+r.width/2;y=r.top+r.height/2}
+  const R=Math.ceil(Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y)))+2;
+  const ov=document.createElement('div');ov.className='theme-wipe';ov.style.background=t==='light'?'#F1EFE8':'#101110';
+  ov.style.clipPath=`circle(0px at ${x}px ${y}px)`;root.appendChild(ov);
+  ov.animate([{clipPath:`circle(0px at ${x}px ${y}px)`},{clipPath:`circle(${R}px at ${x}px ${y}px)`}],{duration:750,easing:'cubic-bezier(.7,0,.2,1)',fill:'forwards'})
+    .finished.then(()=>{setTheme(p,true);return ov.animate([{opacity:1},{opacity:0}],{duration:500,easing:'ease-out',fill:'forwards'}).finished})
+    .catch(()=>setTheme(p,true)).finally(()=>ov.remove());
 }
-$('#theme').onclick=e=>themeSwap(root.getAttribute('data-theme')==='dark'?'light':'dark',e.currentTarget);
-$('#auto').onclick=e=>themeSwap('system',e.currentTarget);
+$('#theme').onclick=e=>themeSwap(root.getAttribute('data-theme')==='dark'?'light':'dark',e.currentTarget,e);
+$('#auto').onclick=e=>themeSwap('system',e.currentTarget,e);
 $('#auto').classList.toggle('on',pref==='system');
 mq.addEventListener('change',()=>{if(pref==='system')setTheme('system')});
 
