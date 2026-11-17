@@ -169,6 +169,27 @@ const SITE = {
       motion_outil: "Claude",                       // facultatif : outil IA utilisé, ex. "Runway", "Kling", "Sora"
     },
 
+    { // ---------- PROJET 05 ----------
+      titre:     { fr: "Mercato Viz",                 en: "Mercato Viz", pl: "Mercato Viz" },
+      categorie: { fr: "Dev web",               en: "Web development", pl: "Tworzenie stron www" },
+      annee:     "2024",
+      role:      { fr: "Développeur web - Designer web",              en: "Web Developer - Web Designer", pl: "Web developer - Web designer" },
+      outils:    "Figma - HTML - CSS - JS",
+      resume:    { fr: "Création d'un site web de datavisualisation sur les transferts footballistiques en Europe.", en: "A data-visualisation website about football transfers in Europe.", pl: "Strona internetowa z wizualizacją danych o transferach piłkarskich w Europie." },
+      details: {
+        // Texte de la fiche à compléter plus tard (| = nouveau paragraphe). Tant qu'il est vide, le résumé s'affiche à la place.
+        fr: "",
+        en: "",
+        pl: "",
+      },
+      lien:    "https://idrisouus.github.io/Mercato_Viz/",
+      image:   "images/projets/projet-05/005.jpg",
+      galerie: [ "images/projets/projet-05/0052.jpg", "images/projets/projet-05/0053.jpg" ],
+      motion:       "",     // motion design : "Video/nom-du-fichier.mp4" ou lien YouTube / Vimeo. "" = pas de motion
+      motion_ia:    true,
+      motion_outil: "",
+    },
+
   ],
 
 
